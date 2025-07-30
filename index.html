@@ -129,3 +129,138 @@
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Header */
+    .header {
+      background: #111;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hamburger {
+      cursor: pointer;
+      font-size: 24px;
+    }
+
+    .title {
+      font-size: 20px;
+    }
+
+    /* Content */
+    .content {
+      padding: 20px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #006d91;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .price {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with hamburger -->
+  <div class="header">
+    <div class="hamburger" onclick="goToMenu()">☰</div>
+    <div class="title">My Page</div>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <div class="section">
+      <h2>My History and Work</h2>
+      <p><a href="#">Studies</a></p>
+      <img src="your-image1.jpg" alt="Study Image">
+    </div>
+
+    <div class="section">
+      <img src="your-image2.jpg" alt="Bulb and Book">
+    </div>
+
+    <div class="section">
+      <h3>Main Characters</h3>
+      <p><strong>ME!</strong> - My name is DJ Dough, I’m a passionate artist...</p>
+    </div>
+
+    <div class="section">
+      <img src="your-image3.jpg" alt="What Do You Need?">
+      <p><a href="#" class="button">Passionate About</a></p>
+    </div>
+
+    <div class="section">
+      <img src="your-image4.jpg" alt="Art Image">
+      <p><a href="#" class="button">ART</a></p>
+    </div>
+
+    <div class="section">
+      <img src="your-image5.jpg" alt="Passion for Jesus">
+      <p><a href="#" class="button">JESUS</a></p>
+    </div>
+
+    <div class="section">
+      <p>I'm DJ Dough. Art is one connection to an amazing God!</p>
+    </div>
+
+    <div class="section">
+      <div style="background-color:#eee; height:100px;"></div>
+      <p>Design/Print</p>
+    </div>
+
+    <div class="section">
+      <div style="background-color:#eee; height:100px;"></div>
+      <p>Design/Print</p>
+    </div>
+
+    <div class="section">
+      <div style="background-color:#eee; height:100px;"></div>
+      <p>Home Crafts <span class="price">$10</span></p>
+    </div>
+
+    <div class="section">
+      <div style="background-color:#eee; height:100px;"></div>
+      <p>Art <span class="price">$10</span></p>
+    </div>
+  </div>
+
+  <script>
+    function goToMenu() {
+      // Redirect to another page
+      window.location.href = "menu.html"; // Change to your menu page
+    }
+  </script>
+
+</body>
+</html>
+
