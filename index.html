@@ -32,5 +32,121 @@
       border-radius: 10px;
       opacity: 0;
       transform: translateY(50px);
-      transition
+      transition: all 0.6s ease;
+    }
+
+    .entry:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .entry.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .date {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .leader {
+      margin: 8px 0;
+      font-weight: 500;
+    }
+
+    .backup {
+      color: #555;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .backup li {
+      margin: 3px 0;
+    }
+
+    .youth {
+      color: #2c7a7b;
+      font-weight: bold;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Sunday Worship Schedule</h1>
+  <div class="schedule">
+    <div class="entry">
+      <div class="date">June 3</div>
+      <div class="leader">Worship Leader: Pa Mang Pi</div>
+      <ul class="backup">
+        <li>Lia Esther</li>
+        <li>Lia Nancy</li>
+        <li>Lia Mercy</li>
+        <li>Siamah Ciang</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="date">August 10</div>
+      <div class="leader">Worship Leader: Angela Huai</div>
+      <ul class="backup">
+        <li>Lia Hannah Bawi</li>
+        <li>Lia Kim Nu</li>
+        <li>Nu Maa Mang</li>
+        <li>Pa Lia Lian</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="date">August 17 <span class="youth">— Youth Sunday</span></div>
+      <div class="leader">Worship Leader: Angela Huai</div>
+      <ul class="backup">
+        <li>Nu Maa Mang</li>
+        <li>Lia Nancy</li>
+        <li>Lia Mercy</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="date">August 24</div>
+      <div class="leader">Worship Leader: Nu Maa Mang</div>
+      <ul class="backup">
+        <li>Pa Lia Lian</li>
+        <li>Lia Esther</li>
+        <li>Angela Huai</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="date">August 31</div>
+      <div class="leader">Worship Leader: Pa Lia Lian</div>
+      <ul class="backup">
+        <li>Siamah Ciang</li>
+        <li>Lia Mercy</li>
+        <li>Lia Nancy</li>
+        <li>Lia Esther</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Scroll animation
+    const entries = document.querySelectorAll('.entry');
+
+    const observer = new IntersectionObserver(entriesList => {
+      entriesList.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    entries.forEach(entry => observer.observe(entry));
+  </script>
+</body>
+</html>
 
