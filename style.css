@@ -42,7 +42,7 @@ p {
 	text-align: center;
 }
 .section-title span {
-	color: crimson;
+	color: #5fdeee
 }
 
 .cta {
@@ -59,8 +59,8 @@ p {
 	transition-property: background-color, color;
 }
 .cta:hover {
-	color: 41D3D4;
-	background-color: 660066;
+	color: #a5afad
+	background-color: #c6e5e0;
 }
 .brand h1 {
 	font-size: 3rem;
