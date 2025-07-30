@@ -1,112 +1,29 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Finds Your Looks — Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #1a1a1a;
-      --accent: #ff7f50;
-      --bg: #f5f5f5;
-      --text: #333;
-      --heading-font: 'Montserrat', sans-serif;
-      --body-font: 'Open Sans', sans-serif;
-    }
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: var(--body-font); background: var(--bg); color: var(--text); }
-    header { background: var(--primary); color: white; padding: 20px; text-align: center; }
-    header h1 { font-family: var(--heading-font); font-size:2.8rem; letter-spacing: 1px; }
-    nav { margin-top: 15px; }
-    nav a { color: white; margin:0 15px; text-decoration: none; font-weight:700; font-size:1rem; }
-    section { padding: 60px 20px; max-width: 800px; margin: auto; }
-    h2 { font-family: var(--heading-font); font-weight:600; margin-bottom: 20px; color: var(--primary); }
-    a { color: var(--accent); text-decoration: none; }
-    .block { background: white; border-radius:8px; padding:30px; margin-bottom:40px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
-    input, textarea { width:100%; padding:12px; margin-top:8px; border:1px solid #ccc; border-radius:4px; font-size:1rem; }
-    button { background: var(--accent); color:white; padding:14px; border:none; border-radius:4px; font-size:1rem; cursor:pointer; font-weight:700; }
-    img.sample { width:48%; border-radius:8px; margin-right:2%; display:inline-block; }
-    iframe { width:100%; border:none; border-radius:8px; margin-top:15px; }
-    footer { text-align:center; padding:30px; color:#777; font-size:0.9rem; }
-    .ig-card {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .ig-card img {
-      width: 220px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-    .ig-card p {
-      font-size: 1.1rem;
-      margin-top: 8px;
-      font-weight: bold;
-      color: #e1306c;
-    }
-  </style>
+  <meta charset="UTF‑8">
+  <meta name="viewport" content="width=device‑width,initial‑scale=1.0">
+  <title>Your Name</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <header>
-    <h1>Finds Your Looks</h1>
+    <h1>Your Name</h1>
     <nav>
-      <a href="#about">About</a>
-      <a href="#survey">Survey</a>
-      <a href="#offer">Art Offer</a>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
-
-  <section id="about" class="block">
-    <h2>👤 About Me</h2>
-    <p>Hi, I’m <strong>Your Name</strong>. I create art from photos—blending photography and illustration into stylish portraits. I studied [your background], and have been honing my craft over the past X years. My work draws on emotion and storytelling.</p>
-    <p>I started when … [your story]. Every piece reflects personality and memorable moments.</p>
-
-    <div class="ig-card">
-      <a href="https://www.instagram.com/__u.suanjr_.ofc22__?igsh=MTl1NnZpNHY1a3Fpaw==" target="_blank">
-        <img src="https://i.imgur.com/3yW2Lg9.png" alt="Instagram Profile" />
-        <p>@__u.suanjr_.ofc22__</p>
-      </a>
-    </div>
-
-    <h3>YouTube</h3>
-    <p>Watch my videos: <strong>@KME‑r1e</strong></p>
-    <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=KME-r1e" height="300"></iframe>
-  </section>
-
-  <section id="survey" class="block">
-    <h2>📝 Visitor Survey</h2>
-    <form>
-      <label for="visit">What brings you here today?</label>
-      <input type="text" id="visit" name="visit" placeholder="Your answer..." required>
-
-      <label for="style">Which art styles interest you most?</label>
-      <textarea id="style" name="style" rows="3" placeholder="e.g. portrait, surreal, watercolor..."></textarea>
-
-      <label for="email">Stay in touch? (email optional)</label>
-      <input type="email" id="email" name="email" placeholder="Your email">
-
-      <button type="submit">Submit</button>
-    </form>
-  </section>
-
-  <section id="offer" class="block">
-    <h2>🎨 Art Offer: Photo‑to‑Art Conversion</h2>
-    <p>I transform your photo into a unique art piece—digital or printed. Here are the available packages:</p>
-    <ul>
-      <li><strong>Basic Digital:</strong> Illustrated color portrait, digital file – <strong>$50</strong></li>
-      <li><strong>Digital + Print:</strong> Digital file plus 8×10 print – <strong>$120</strong></li>
-      <li><strong>Premium Package:</strong> Full illustration, canvas print, optional frame – starts at <strong>$200+</strong></li>
-    </ul>
-    <h3>Example Artwork</h3>
-    <img src="sample-art1.jpg" alt="Sample art" class="sample">
-    <img src="sample-art2.jpg" alt="Sample art" class="sample">
-    <p>DM me on Instagram or email to order your custom piece.</p>
-  </section>
-
+  <main>
+    <section id="intro">
+      <h2>Welcome!</h2>
+      <p>Hi, I’m [Your Name]. I specialize in [your field/interest].</p>
+      <p>Follow me on Instagram: <a href="https://instagram.com/yourhandle" target="_blank">@yourhandle</a></p>
+    </section>
+  </main>
   <footer>
-    <p>© 2025 Your Name — All Rights Reserved</p>
+    © 2025 Your Name
   </footer>
-
 </body>
 </html>
