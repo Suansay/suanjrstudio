@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>OwlMind Creative</title>
   <style>
     body {
@@ -17,11 +17,37 @@
       padding: 50px 20px;
       text-align: center;
       color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Floating animation */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     header h1 {
       font-size: 3em;
       margin: 0;
+      display: inline-block;
+      animation: float 4s ease-in-out infinite;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+      cursor: default;
+    }
+
+    /* Hover effect on logo */
+    header h1:hover {
+      transform: scale(1.1) rotate(3deg);
+      text-shadow:
+        0 0 8px #fff,
+        0 0 15px #90caf9,
+        0 0 25px #42a5f5,
+        0 0 40px #1976d2;
     }
 
     header p {
@@ -75,10 +101,14 @@
       cursor: pointer;
       transition: border 0.3s ease;
       overflow: hidden;
+      font-size: 3em;
+      color: #aaa;
+      user-select: none;
     }
 
     .upload-box:hover {
       border-color: #35495e;
+      color: #35495e;
     }
 
     .upload-box img {
@@ -143,7 +173,7 @@
 
   <section>
     <h2>Contact</h2>
-    <p>Let’s work together! Email: <a href="suanp925@gmail.com">suanp925@gmail.com</a></p>
+    <p>Let’s work together! Email: <a href="mailto:suanp925@gmail.com">suanp925@gmail.com</a></p>
     <p>Or follow us on Instagram: <a href="#">@__u.suanjr_.ofc22__</a></p>
   </section>
 </div>
