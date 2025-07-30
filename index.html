@@ -1,152 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sunday Worship Schedule</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Home</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 20px;
-      overflow-x: hidden;
+    :root {
+      --primary: #2c3e50;
+      --accent: #e67e22;
+      --bg: #ecf0f1;
+      --text: #34495e;
     }
-
-    h1 {
-      text-align: center;
-      color: #4b2e83;
-      margin-bottom: 30px;
-    }
-
-    .schedule {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .entry {
-      background-color: #fff;
-      border-left: 8px solid #4b2e83;
-      margin-bottom: 20px;
-      padding: 15px 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      border-radius: 10px;
-      opacity: 0;
-      transform: translateY(50px);
-      transition: all 0.6s ease;
-    }
-
-    .entry:hover {
-      transform: scale(1.02);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .entry.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .date {
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .leader {
-      margin: 8px 0;
-      font-weight: 500;
-    }
-
-    .backup {
-      color: #555;
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .backup li {
-      margin: 3px 0;
-    }
-
-    .youth {
-      color: #2c7a7b;
-      font-weight: bold;
-      font-style: italic;
-    }
+    body { margin:0; font-family:sans-serif; background:var(--bg); color:var(--text); }
+    header { background:var(--primary); color:#fff; padding:20px; text-align:center; }
+    nav { display:flex; justify-content:center; gap:20px; }
+    nav a { color:#fff; text-decoration:none; font-weight:bold; }
+    section { padding:40px 20px; max-width:800px; margin: auto; }
+    .about, .survey, .offer { background:#fff; margin-bottom:30px; border-radius:8px; padding:20px; }
+    .survey form { display:flex; flex-direction:column; gap:15px; }
+    .survey label { font-weight:bold; }
+    input[type=text], input[type=email], textarea { padding:10px; border:1px solid #ccc; border-radius:4px; width:100%; }
+    button { background:var(--accent); color:#fff; padding:12px; border:none; border-radius:4px; cursor:pointer; font-size:1em; }
+    footer { text-align:center; padding:20px; font-size:0.9em; color:#555; }
+    iframe { width:100%; border:none; border-radius:8px; margin-top:10px; }
   </style>
 </head>
 <body>
 
-  <h1>Sunday Worship Schedule</h1>
-  <div class="schedule">
-    <div class="entry">
-      <div class="date">June 3</div>
-      <div class="leader">Worship Leader: Pa Mang Pi</div>
-      <ul class="backup">
-        <li>Lia Esther</li>
-        <li>Lia Nancy</li>
-        <li>Lia Mercy</li>
-        <li>Siamah Ciang</li>
-      </ul>
-    </div>
+  <header>
+    <h1>Your Name</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#survey">Survey</a>
+      <a href="#offer">Art Offer</a>
+    </nav>
+  </header>
 
-    <div class="entry">
-      <div class="date">August 10</div>
-      <div class="leader">Worship Leader: Angela Huai</div>
-      <ul class="backup">
-        <li>Lia Hannah Bawi</li>
-        <li>Lia Kim Nu</li>
-        <li>Nu Maa Mang</li>
-        <li>Pa Lia Lian</li>
-      </ul>
-    </div>
+  <section id="about" class="about">
+    <h2>👤 About Me</h2>
+    <p>Hello! I’m Your Name (you can add your preferred nickname). I am passionate about photography, digital art, and storytelling. I studied [your background—e.g. “visual arts at XYZ University” or “self‑taught in creative digital media”] and have been practicing for [X years].</p>
+    <p>My journey began when … [describe your background, values, experience, inspirations]. I love capturing human expressions and transforming them into creative portrait art.</p>
+    <h3>Find me on Instagram</h3>
+    <p>My Instagram: <a href="https://www.instagram.com/__u.suanjr_.ofc22__?igsh=MTl1NnZpNHY1a3Fpaw==" target="_blank">@__u.suanjr_.ofc22__</a></p>
+    <iframe src="https://instagram.com/__u.suanjr_.ofc22__?embed=true" height="400"></iframe>
+    <!-- Note: some browsers restrict embedding Instagram; if that fails, the link is still there -->
+    <h3>My YouTube Channel</h3>
+    <p>Check out my videos on <strong>@KME‑r1e</strong>:</p>
+    <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=KME-r1e" height="300"></iframe>
+  </section>
 
-    <div class="entry">
-      <div class="date">August 17 <span class="youth">— Youth Sunday</span></div>
-      <div class="leader">Worship Leader: Angela Huai</div>
-      <ul class="backup">
-        <li>Nu Maa Mang</li>
-        <li>Lia Nancy</li>
-        <li>Lia Mercy</li>
-      </ul>
-    </div>
+  <section id="survey" class="survey">
+    <h2>📝 Visitor Survey</h2>
+    <form>
+      <label for="feedback">What brings you here today?</label>
+      <input type="text" id="feedback" name="feedback" placeholder="Your answer..." required>
 
-    <div class="entry">
-      <div class="date">August 24</div>
-      <div class="leader">Worship Leader: Nu Maa Mang</div>
-      <ul class="backup">
-        <li>Pa Lia Lian</li>
-        <li>Lia Esther</li>
-        <li>Angela Huai</li>
-      </ul>
-    </div>
+      <label for="interest">Which art styles interest you most?</label>
+      <textarea id="interest" name="interest" rows="3" placeholder="e.g. portrait, watercolor, surreal..."></textarea>
 
-    <div class="entry">
-      <div class="date">August 31</div>
-      <div class="leader">Worship Leader: Pa Lia Lian</div>
-      <ul class="backup">
-        <li>Siamah Ciang</li>
-        <li>Lia Mercy</li>
-        <li>Lia Nancy</li>
-        <li>Lia Esther</li>
-      </ul>
-    </div>
-  </div>
+      <label for="contact">Would you like to stay in touch?</label>
+      <input type="email" id="contact" name="contact" placeholder="Your email (optional)">
 
-  <script>
-    // Scroll animation
-    const entries = document.querySelectorAll('.entry');
+      <button type="submit">Submit Survey</button>
+    </form>
+  </section>
 
-    const observer = new IntersectionObserver(entriesList => {
-      entriesList.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
+  <section id="offer" class="offer">
+    <h2>🎨 Best Offer: Portrait Art Transformation</h2>
+    <p>I offer custom portrait transformations—taking your photo and turning it into a unique art piece (digital or printed canvas). Pricing and packages below:</p>
+    <ul>
+      <li><strong>Basic Digital Portrait</strong> – Color illustration from photo, digital delivery – <strong>$50</strong></li>
+      <li><strong>Enhanced Digital + Print</strong> – Illustration plus high‑quality 8×10 print – <strong>$120</strong></li>
+      <li><strong>Premium Art Package</strong> – Full illustration, premium print (canvas), plus optional framing – <strong>$200+</strong> (depends on size/material)</li>
+    </ul>
+    <h3>Example Sample Art</h3>
+    <img src="sample-art1.jpg" alt="Sample art 1" style="width:48%; margin-right:2%; border-radius:8px;">
+    <img src="sample-art2.jpg" alt="Sample art 2" style="width:48%; border-radius:8px;">
+    <p>Contact me via Instagram DM or email to commission your custom art piece!</p>
+  </section>
 
-    entries.forEach(entry => observer.observe(entry));
-  </script>
+  <footer>
+    <p>© 2025 Your Name. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
 
