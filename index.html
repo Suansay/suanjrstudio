@@ -2,122 +2,190 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sunday Worship Schedule</title>
+  <title>OwlMind Creative</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
       margin: 0;
-      padding: 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f4f6f9;
+      color: #222;
+      scroll-behavior: smooth;
     }
 
-    h1 {
+    header {
+      background: #35495e;
+      padding: 50px 20px;
       text-align: center;
-      color: #4b2e83;
-      margin-bottom: 30px;
+      color: #fff;
     }
 
-    .schedule {
-      max-width: 800px;
-      margin: auto;
+    header h1 {
+      font-size: 3em;
+      margin: 0;
     }
 
-    .entry {
-      background-color: #fff;
-      border-left: 8px solid #4b2e83;
-      margin-bottom: 20px;
-      padding: 15px 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      border-radius: 10px;
-    }
-
-    .date {
+    header p {
       font-size: 1.2em;
-      font-weight: bold;
-      color: #333;
+      margin-top: 10px;
+      color: #cce3f0;
     }
 
-    .leader {
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    section {
+      margin-bottom: 60px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.6s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .info p {
       margin: 8px 0;
-      font-weight: 500;
+      line-height: 1.5;
     }
 
-    .backup {
-      color: #555;
-      list-style: none;
-      padding-left: 0;
+    .photo-upload {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
     }
 
-    .backup li {
-      margin: 3px 0;
+    .upload-box {
+      background: #fff;
+      border: 2px dashed #aaa;
+      border-radius: 10px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: border 0.3s ease;
+      overflow: hidden;
     }
 
-    .youth {
-      color: #2c7a7b;
-      font-weight: bold;
-      font-style: italic;
+    .upload-box:hover {
+      border-color: #35495e;
     }
 
+    .upload-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+
+    footer {
+      text-align: center;
+      background: #35495e;
+      padding: 25px;
+      color: #cce3f0;
+    }
+
+    a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2em;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <h1>Sunday Worship Schedule</h1>
-  <div class="schedule">
+<header>
+  <h1>OwlMind Creative</h1>
+  <p>Innovative Branding & Strategy for Modern Thinkers</p>
+</header>
 
-    <div class="entry">
-      <div class="date">June 3</div>
-      <div class="leader">Worship Leader: Pa Mang Pi</div>
-      <ul class="backup">
-        <li>Lia Esther</li>
-        <li>Lia Nancy</li>
-        <li>Lia Mercy</li>
-        <li>Siamah Ciang</li>
-      </ul>
+<div class="container">
+
+  <section class="info">
+    <h2>What We Do</h2>
+    <p><strong>Brand Strategy:</strong> Helping small businesses find their voice and identity.</p>
+    <p><strong>Web & Graphic Design:</strong> Building professional, beautiful digital experiences.</p>
+    <p><strong>Consulting:</strong> Turning ideas into plans with measurable outcomes.</p>
+    <p><strong>Based in:</strong> Seattle, WA — Available worldwide</p>
+  </section>
+
+  <section>
+    <h2>Our Approach</h2>
+    <p>We combine creative insight with analytical thinking. Whether you're launching a product, scaling a service, or rebranding your look, we help you connect with your audience in meaningful ways.</p>
+  </section>
+
+  <section>
+    <h2>Project Samples</h2>
+    <p>Upload your portfolio shots or recent project previews. (Local display only)</p>
+    <div class="photo-upload">
+      <div class="upload-box" onclick="uploadImage(0)">+</div>
+      <div class="upload-box" onclick="uploadImage(1)">+</div>
+      <div class="upload-box" onclick="uploadImage(2)">+</div>
+      <div class="upload-box" onclick="uploadImage(3)">+</div>
+      <div class="upload-box" onclick="uploadImage(4)">+</div>
     </div>
+    <input type="file" id="fileInput" accept="image/*" style="display: none;">
+  </section>
 
-    <div class="entry">
-      <div class="date">August 10</div>
-      <div class="leader">Worship Leader: Angela Huai</div>
-      <ul class="backup">
-        <li>Lia Hannah Bawi</li>
-        <li>Lia Kim Nu</li>
-        <li>Nu Maa Mang</li>
-        <li>Pa Lia Lian</li>
-      </ul>
-    </div>
+  <section>
+    <h2>Contact</h2>
+    <p>Let’s work together! Email: <a href="mailto:hello@owlmindcreative.com">hello@owlmindcreative.com</a></p>
+    <p>Or follow us on Instagram: <a href="#">@owlmindcreative</a></p>
+  </section>
+</div>
 
-    <div class="entry">
-      <div class="date">August 17 <span class="youth">— Youth Sunday</span></div>
-      <div class="leader">Worship Leader: Angela Huai</div>
-      <ul class="backup">
-        <li>Nu Maa Mang</li>
-        <li>Lia Nancy</li>
-        <li>Lia Mercy</li>
-      </ul>
-    </div>
+<footer>
+  <p>© 2025 OwlMind Creative — Made with heart & hustle 💡🦉</p>
+</footer>
 
-    <div class="entry">
-      <div class="date">August 24</div>
-      <div class="leader">Worship Leader: Nu Maa Mang</div>
-      <ul class="backup">
-        <li>Pa Lia Lian</li>
-        <li>Lia Esther</li>
-        <li>Angela Huai</li>
-      </ul>
-    </div>
+<script>
+  // Animate sections on scroll
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
 
-    <div class="entry">
-      <div class="date">August 31</div>
-      <div class="leader">Worship Leader: Pa Lia Lian</div>
-      <ul class="backup">
-        <li>Siamah Ciang</li>
-        <li>Lia Mercy</li>
-        <li>Lia Nancy</li>
-        <li>Lia Esther</li>
-      </ul>
-    </div>
+  sections.forEach(section => observer.observe(section));
 
-  </div>
+  // Image uploader
+  let currentBox = 0;
+  const boxes = document.querySelectorAll('.upload-box');
+  const fileInput = document.getElementById('fileInput');
+
+  function uploadImage(index) {
+    currentBox = index;
+    fileInput.click();
+  }
+
+  fileInput.addEventListener('change', function () {
+    const file = this.files[0];
+    if (file && file.type.startsWith('image/')) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        boxes[currentBox].innerHTML = `<img src="${e.target.result}" alt="Project Image">`;
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
+
 </body>
 </html>
