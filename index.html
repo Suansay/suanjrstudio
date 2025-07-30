@@ -1,185 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Emma & Liam's Wedding</title>
+  <meta charset="UTF-8">
+  <title>Sunday Worship Schedule</title>
   <style>
     body {
-      font-family: 'Georgia', serif;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
       margin: 0;
-      padding: 0;
-      background: #fffaf8;
-      color: #333;
+      padding: 20px;
     }
-    header {
-      background: #f8e1e7;
+
+    h1 {
       text-align: center;
-      padding: 50px 20px;
+      color: #4b2e83;
+      margin-bottom: 30px;
     }
-    header h1 {
-      font-size: 3em;
-      margin: 0;
-    }
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-    }
-    section {
-      padding: 40px 20px;
+
+    .schedule {
       max-width: 800px;
       margin: auto;
     }
-    .countdown {
-      font-size: 2em;
-      text-align: center;
-      margin: 20px 0;
+
+    .entry {
+      background-color: #fff;
+      border-left: 8px solid #4b2e83;
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      border-radius: 10px;
     }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
-    .gallery img {
-      width: 200px;
-      height: auto;
-      border-radius: 8px;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    label {
+
+    .date {
+      font-size: 1.2em;
       font-weight: bold;
-      margin-bottom: 5px;
+      color: #333;
     }
-    input, textarea {
-      padding: 10px;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      resize: vertical;
+
+    .leader {
+      margin: 8px 0;
+      font-weight: 500;
     }
-    button {
-      background: #e89ba3;
-      color: white;
-      padding: 12px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background 0.3s ease;
+
+    .backup {
+      color: #555;
+      list-style: none;
+      padding-left: 0;
     }
-    button:hover {
-      background: #d66f7a;
+
+    .backup li {
+      margin: 3px 0;
     }
-    footer {
-      background: #f8e1e7;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
+
+    .youth {
+      color: #2c7a7b;
+      font-weight: bold;
+      font-style: italic;
     }
+
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Emma & Liam</h1>
-    <p>We're getting married!</p>
-  </header>
+  <h1>Sunday Worship Schedule</h1>
+  <div class="schedule">
 
-  <section>
-    <h2>Wedding Details</h2>
-    <p><strong>Date:</strong> October 10, 2025</p>
-    <p><strong>Time:</strong> 4:00 PM</p>
-    <p><strong>Location:</strong> Sunset Gardens, SeaTac, WA</p>
-  </section>
-
-  <section>
-    <h2>Countdown to Our Big Day</h2>
-    <div class="countdown" id="countdown"></div>
-  </section>
-
-  <section>
-    <h2>Our Story</h2>
-    <p>From our first coffee date to this moment, our journey has been filled with love, laughter, and countless memories. We can't wait to start this new chapter together and are thrilled to have you celebrate with us.</p>
-  </section>
-
-  <section>
-    <h2>Photo Gallery</h2>
-    <div class="gallery">
-      <img src="photo1.jpg" alt="Emma and Liam 1" />
-      <img src="photo2.jpg" alt="Emma and Liam 2" />
-      <img src="photo3.jpg" alt="Emma and Liam 3" />
+    <div class="entry">
+      <div class="date">June 3</div>
+      <div class="leader">Worship Leader: Pa Mang Pi</div>
+      <ul class="backup">
+        <li>Lia Esther</li>
+        <li>Lia Nancy</li>
+        <li>Lia Mercy</li>
+        <li>Siamah Ciang</li>
+      </ul>
     </div>
-  </section>
 
-  <section>
-    <h2>RSVP</h2>
-    <form id="rsvpForm">
-      <label for="name">Your Name</label>
-      <input id="name" type="text" placeholder="Your Name" required />
-      
-      <label for="email">Your Email</label>
-      <input id="email" type="email" placeholder="Your Email" required />
-      
-      <label for="message">Message (e.g., number of guests)</label>
-      <textarea id="message" placeholder="Message (e.g., number of guests)" rows="4"></textarea>
-      
-      <button type="submit">Submit RSVP</button>
-    </form>
-  </section>
+    <div class="entry">
+      <div class="date">August 10</div>
+      <div class="leader">Worship Leader: Angela Huai</div>
+      <ul class="backup">
+        <li>Lia Hannah Bawi</li>
+        <li>Lia Kim Nu</li>
+        <li>Nu Maa Mang</li>
+        <li>Pa Lia Lian</li>
+      </ul>
+    </div>
 
-  <footer>
-    <p>With love, Emma & Liam</p>
-  </footer>
+    <div class="entry">
+      <div class="date">August 17 <span class="youth">— Youth Sunday</span></div>
+      <div class="leader">Worship Leader: Angela Huai</div>
+      <ul class="backup">
+        <li>Nu Maa Mang</li>
+        <li>Lia Nancy</li>
+        <li>Lia Mercy</li>
+      </ul>
+    </div>
 
-  <script>
-    // Countdown Timer
-    const countdown = document.getElementById('countdown');
-    const weddingDate = new Date('October 10, 2025 16:00:00').getTime();
+    <div class="entry">
+      <div class="date">August 24</div>
+      <div class="leader">Worship Leader: Nu Maa Mang</div>
+      <ul class="backup">
+        <li>Pa Lia Lian</li>
+        <li>Lia Esther</li>
+        <li>Angela Huai</li>
+      </ul>
+    </div>
 
-    const updateCountdown = () => {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
+    <div class="entry">
+      <div class="date">August 31</div>
+      <div class="leader">Worship Leader: Pa Lia Lian</div>
+      <ul class="backup">
+        <li>Siamah Ciang</li>
+        <li>Lia Mercy</li>
+        <li>Lia Nancy</li>
+        <li>Lia Esther</li>
+      </ul>
+    </div>
 
-      if (distance < 0) {
-        countdown.innerHTML = "We're Married!";
-        clearInterval(interval);
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((distance / (1000 * 60)) % 60);
-      const seconds = Math.floor((distance / 1000) % 60);
-
-      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    };
-
-    const interval = setInterval(updateCountdown, 1000);
-    updateCountdown();
-
-    // Simple RSVP form submission handler
-    const form = document.getElementById('rsvpForm');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const message = form.message.value.trim();
-      
-      if (!name || !email) {
-        alert('Please fill in your name and email.');
-        return;
-      }
-      
-      // For now, just show a thank you alert
-      alert(`Thank you for your RSVP, ${name}! We'll be in touch.`);
-      form.reset();
-    });
-  </script>
-
+  </div>
 </body>
 </html>
