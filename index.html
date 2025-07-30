@@ -1,135 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Wedding Day</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Sunday Worship Schedule</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Montserrat', sans-serif;
-      background: #fff0f5;
-      color: #333;
-      line-height: 1.6;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
     }
 
-    header {
-      background: #ffe6f0;
+    h1 {
       text-align: center;
-      padding: 4rem 2rem;
+      color: #4b2e83;
+      margin-bottom: 30px;
     }
 
-    header h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 4rem;
-      color: #b30059;
+    .schedule {
+      max-width: 800px;
+      margin: auto;
     }
 
-    header p {
-      font-size: 1.6rem;
-      color: #4d004d;
-    }
-
-    .section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    .section h2 {
-      font-size: 2.5rem;
-      color: #b30059;
-      margin-bottom: 1rem;
-    }
-
-    .section p {
-      font-size: 1.4rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .rsvp {
-      background: #fff;
-      border: 1px solid #ffcce0;
+    .entry {
+      background-color: #fff;
+      border-left: 8px solid #4b2e83;
+      margin-bottom: 20px;
+      padding: 15px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
       border-radius: 10px;
-      max-width: 500px;
-      margin: 3rem auto;
-      padding: 2rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    .rsvp input, .rsvp textarea, .rsvp button {
-      display: block;
-      width: 100%;
-      margin-bottom: 1rem;
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
+    .date {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #333;
     }
 
-    .rsvp button {
-      background: #b30059;
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: background 0.3s ease;
+    .leader {
+      margin: 8px 0;
+      font-weight: 500;
     }
 
-    .rsvp button:hover {
-      background: #99004d;
+    .backup {
+      color: #555;
+      list-style: none;
+      padding-left: 0;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #ffe6f0;
-      color: #4d004d;
-      font-size: 1.2rem;
+    .backup li {
+      margin: 3px 0;
     }
+
+    .youth {
+      color: #2c7a7b;
+      font-weight: bold;
+      font-style: italic;
+    }
+
   </style>
 </head>
 <body>
-  <header>
-    <h1>Emma & Liam</h1>
-    <p>Join us in celebrating our special day</p>
-  </header>
 
-  <section class="section">
-    <h2>Our Story</h2>
-    <p>
-      From the moment we met, we knew our hearts were meant for each other. After countless adventures and laughter-filled days, we're finally tying the knot!
-    </p>
-  </section>
+  <h1>Sunday Worship Schedule</h1>
+  <div class="schedule">
 
-  <section class="section">
-    <h2>Wedding Details</h2>
-    <p>
-      <strong>Date:</strong> October 12, 2025<br>
-      <strong>Location:</strong> The Rose Garden Venue, Seattle, WA<br>
-      <strong>Time:</strong> Ceremony at 3:00 PM, Reception to follow
-    </p>
-  </section>
-
-  <section class="section">
-    <h2>RSVP</h2>
-    <div class="rsvp">
-      <form>
-        <input type="text" name="name" placeholder="Your Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" rows="4" placeholder="Any message for us?"></textarea>
-        <button type="submit">Send RSVP</button>
-      </form>
+    <div class="entry">
+      <div class="date">June 3</div>
+      <div class="leader">Worship Leader: Pa Mang Pi</div>
+      <ul class="backup">
+        <li>Lia Esther</li>
+        <li>Lia Nancy</li>
+        <li>Lia Mercy</li>
+        <li>Siamah Ciang</li>
+      </ul>
     </div>
-  </section>
 
-  <footer>
-    <p>With love, Emma & Liam © 2025</p>
-  </footer>
+    <div class="entry">
+      <div class="date">August 10</div>
+      <div class="leader">Worship Leader: Angela Huai</div>
+      <ul class="backup">
+        <li>Lia Hannah Bawi</li>
+        <li>Lia Kim Nu</li>
+        <li>Nu Maa Mang</li>
+        <li>Pa Lia Lian</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="date">August 17 <span class="youth">— Youth Sunday</span></div>
+      <div class="leader">Worship Leader: Angela Huai</div>
+      <ul class="backup">
+        <li>Nu Maa Mang</li>
+        <li>Lia Nancy</li>
+        <li>Lia Mercy</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="date">August 24</div>
+      <div class="leader">Worship Leader: Nu Maa Mang</div>
+      <ul class="backup">
+        <li>Pa Lia Lian</li>
+        <li>Lia Esther</li>
+        <li>Angela Huai</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="date">August 31</div>
+      <div class="leader">Worship Leader: Pa Lia Lian</div>
+      <ul class="backup">
+        <li>Siamah Ciang</li>
+        <li>Lia Mercy</li>
+        <li>Lia Nancy</li>
+        <li>Lia Esther</li>
+      </ul>
+    </div>
+
+  </div>
 </body>
 </html>
+
