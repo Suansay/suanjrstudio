@@ -29,6 +29,32 @@
       cursor: pointer;
     }
 
+    /* Search bar */
+    .search-box {
+      position: relative;
+    }
+
+    .search-box input {
+      padding: 5px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .search-box button {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: #1e88e5;
+      color: white;
+      border: none;
+      padding: 0 10px;
+      cursor: pointer;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+
     /* Side Menu */
     .sidemenu {
       height: 100%;
@@ -65,7 +91,7 @@
       cursor: pointer;
     }
 
-    /* Page Sections */
+    /* Sections */
     .section {
       padding: 2rem 1rem;
       text-align: center;
@@ -108,6 +134,19 @@
       color: #2a7dab;
       text-decoration: none;
     }
+
+    /* Placeholder blocks */
+    .placeholder {
+      background-color: #eee;
+      height: 150px;
+      width: 90%;
+      margin: 0 auto 1rem auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      border: 2px dashed #ccc;
+    }
   </style>
 </head>
 <body>
@@ -119,12 +158,19 @@
     <a href="#map">My Location</a>
     <a href="#instagram">Instagram</a>
     <a href="#recommendations">Seattle Spots</a>
+    <a href="#shop">Shop</a>
+    <a href="#">Contact</a>
   </div>
 
   <!-- Header -->
   <header>
     <div class="icon" onclick="openMenu()">&#9776;</div>
-    <div class="icon">&#128269;</div>
+    <div class="search-box">
+      <form onsubmit="searchSite(); return false;">
+        <input type="text" id="searchInput" placeholder="Search..." />
+        <button type="submit">&#128269;</button>
+      </form>
+    </div>
   </header>
 
   <!-- Hero Section -->
@@ -138,14 +184,14 @@
     <img src="whoami.jpg" alt="Who Am I">
     <h2>About Me?</h2>
     <p>
-      What I did – or what am I intentional is to be creative and create the Arts of image towards view
-      and a working site web that can change the look of others by creating and learning different things.
+      I'm passionate about creativity, art, and making websites that inspire. I learn through doing and love sharing that.
     </p>
-    <div style="font-size: 1.5rem;">ℹ️</div>
+    <a class="button" href="#">Read More</a>
   </section>
 
   <!-- Map Section -->
   <section id="map" class="section">
+    <h2>My Location</h2>
     <iframe src="https://www.google.com/maps?q=47.6050,-122.3344&z=15&output=embed"></iframe>
   </section>
 
@@ -153,39 +199,49 @@
   <section id="instagram" class="section">
     <img src="your-instagram-img.jpg" alt="Instagram">
     <p><strong>My Instagram</strong></p>
-    <p><a href="#">1k. followers</a></p>
-    <a class="button" href="#">Visit</a>
+    <p><a href="#">@myhandle</a></p>
+    <a class="button" href="#">Follow</a>
   </section>
 
   <!-- Creative Website Section -->
   <section class="section">
     <img src="your-creative-image.jpg" alt="Creative Website">
-    <p><strong>Website</strong></p>
+    <p><strong>My Portfolio</strong></p>
     <p><a href="#">OwlMind Creative</a></p>
     <a class="button" href="#">Visit</a>
   </section>
 
-  <!-- Seattle Recommendations -->
+  <!-- Recommendations -->
   <section id="recommendations" class="section">
-    <h2>Best Recommendation To Visit Seattle Places</h2>
+    <h2>Top Seattle Recommendations</h2>
 
     <img src="public-market.jpg" alt="Public Market Center">
     <p>Public Market Center</p>
-    <a class="button" href="#">Visit</a>
+    <a class="button" href="#">Explore</a>
 
     <img src="space-needle.jpg" alt="Space Needle">
-    <p>Space Needle Seattle</p>
-    <a class="button" href="#">Visit</a>
+    <p>Space Needle</p>
+    <a class="button" href="#">Explore</a>
 
     <img src="museum-of-flight.jpg" alt="Museum of Flight">
-    <p>The Museum of Flight</p>
-    <a class="button" href="#">Visit</a>
+    <p>Museum of Flight</p>
+    <a class="button" href="#">Explore</a>
 
     <img src="skyview.jpg" alt="Sky View Observatory">
     <p>Sky View Observatory</p>
-    <a class="button" href="#">Visit</a>
+    <a class="button" href="#">Explore</a>
   </section>
 
+  <!-- Shop Section (blank for you) -->
+  <section id="shop" class="section">
+    <h2>My Store</h2>
+    <div class="placeholder">Upload artwork here</div>
+    <div class="placeholder">Add product details</div>
+    <div class="placeholder">Price and Buy Button</div>
+    <div class="placeholder">More content...</div>
+  </section>
+
+  <!-- JavaScript -->
   <script>
     function openMenu() {
       document.getElementById("mySidemenu").style.left = "0";
@@ -193,6 +249,21 @@
 
     function closeMenu() {
       document.getElementById("mySidemenu").style.left = "-250px";
+    }
+
+    function searchSite() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      if (query.includes("about")) {
+        window.location.hash = "#about";
+      } else if (query.includes("map") || query.includes("location")) {
+        window.location.hash = "#map";
+      } else if (query.includes("insta")) {
+        window.location.hash = "#instagram";
+      } else if (query.includes("shop") || query.includes("store")) {
+        window.location.hash = "#shop";
+      } else {
+        alert("No matching content found. Try searching for: About, Map, Instagram, Shop.");
+      }
     }
   </script>
 
