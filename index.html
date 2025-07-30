@@ -1,468 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>OwlMind Creative</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Page</title>
   <style>
-    body {
+    body, html {
       margin: 0;
+      padding: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #f4f6f9;
-      color: #222;
-      scroll-behavior: smooth;
-      padding-top: 70px; /* space for fixed nav */
-    }
-
-    /* --- NAVIGATION BAR --- */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: #35495e;
-      display: flex;
-      justify-content: center;
-      gap: 40px;
-      padding: 15px 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
-    }
-
-    nav a {
-      color: #cce3f0;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1em;
-      transition: color 0.3s ease;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: #90caf9;
-      border-bottom: 2px solid #90caf9;
-      padding-bottom: 2px;
+      background-color: #2e2e2e;
+      color: white;
+      text-align: center;
     }
 
     header {
-      background: #35495e;
-      padding: 50px 20px 30px;
-      text-align: center;
-      color: #fff;
-      position: relative;
-      overflow: hidden;
-      margin-bottom: 40px;
+      background: #1c1c1c;
+      padding: 1rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
     }
 
-    /* Floating animation */
-    @keyframes float {
+    .menu-icon, .search-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(to bottom right, #1c1c1c, #2e2e2e);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .arrow-down {
+      font-size: 2rem;
+      margin-top: 2rem;
+      color: #aaa;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
       0%, 100% {
         transform: translateY(0);
       }
       50% {
-        transform: translateY(-10px);
+        transform: translateY(10px);
       }
     }
 
-    header h1 {
-      font-size: 3em;
-      margin: 0;
-      display: inline-block;
-      animation: float 4s ease-in-out infinite;
-      transition: transform 0.3s ease, text-shadow 0.3s ease;
-      cursor: default;
-    }
-
-    /* Hover effect on logo */
-    header h1:hover {
-      transform: scale(1.1) rotate(3deg);
-      text-shadow:
-        0 0 8px #fff,
-        0 0 15px #90caf9,
-        0 0 25px #42a5f5,
-        0 0 40px #1976d2;
-    }
-
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
-      color: #cce3f0;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 0 20px 60px;
-    }
-
-    section {
-      margin-bottom: 60px;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.6s ease;
-      scroll-margin-top: 80px; /* offset for fixed nav */
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h2 {
-      color: #2c3e50;
-      margin-bottom: 10px;
-    }
-
-    .info p {
-      margin: 8px 0;
-      line-height: 1.5;
-    }
-
-    .photo-upload {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
-    }
-
-    .upload-box {
-      background: #fff;
-      border: 2px dashed #aaa;
-      border-radius: 10px;
-      height: 180px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: border 0.3s ease, color 0.3s ease;
-      overflow: hidden;
-      font-size: 3em;
-      color: #aaa;
-      user-select: none;
-    }
-
-    .upload-box:hover {
-      border-color: #35495e;
-      color: #35495e;
-    }
-
-    .upload-box img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: cover;
-    }
-
-    footer {
-      text-align: center;
-      background: #35495e;
-      padding: 25px;
-      color: #cce3f0;
-    }
-
-    a {
-      color: #2980b9;
-      text-decoration: none;
-    }
-
-    /* Back to top button */
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #35495e;
-      color: #cce3f0;
-      border: none;
-      padding: 12px 16px;
-      border-radius: 30px;
-      font-size: 18px;
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.4s ease;
-      z-index: 1000;
-    }
-
-    #backToTop.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2em;
-      }
-
-      nav {
-        gap: 20px;
-      }
-
-      nav a {
-        font-size: 1em;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<nav>
-  <a href="#home" class="active">Home</a>
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<header id="home">
-  <h1>OwlMind Creative</h1>
-  <p>Innovative Branding & Strategy for Modern Thinkers</p>
-</header>
-
-<div class="container">
-
-  <section id="about" class="info">
-    <h2>What We Do</h2>
-    <p><strong>Brand Strategy:</strong> Helping small businesses find their voice and identity.</p>
-    <p><strong>Web & Graphic Design:</strong> Building professional, beautiful digital experiences.</p>
-    <p><strong>Consulting:</strong> Turning ideas into plans with measurable outcomes.</p>
-    <p><strong>Based in:</strong> Seattle, WA — Available worldwide</p>
-  </section>
-
-  <section id="projects">
-    <h2>Our Approach</h2>
-    <p>We combine creative insight with analytical thinking. Whether you're launching a product, scaling a service, or rebranding your look, we help you connect with your audience in meaningful ways.</p>
-
-    <h2>Project Samples</h2>
-    <p>Upload your portfolio shots or recent project previews. (Local display only)</p>
-    <div class="photo-upload">
-      <div class="upload-box" onclick="uploadImage(0)">+</div>
-      <div class="upload-box" onclick="uploadImage(1)">+</div>
-      <div class="upload-box" onclick="uploadImage(2)">+</div>
-      <div class="upload-box" onclick="uploadImage(3)">+</div>
-      <div class="upload-box" onclick="uploadImage(4)">+</div>
-    </div>
-    <input type="file" id="fileInput" accept="image/*" style="display: none;">
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Let’s work together! Email: <a href="mailto:suanp925@gmail.com">suanp925@gmail.com</a></p>
-    <p>Or follow us on Instagram: <a href="#">@__u.suanjr_.ofc22__</a></p>
-  </section>
-</div>
-
-<footer>
-  <p>© 2025 OwlMind Creative — Made with heart & hustle 💡🦉</p>
-</footer>
-
-<button id="backToTop" aria-label="Back to top">↑</button>
-
-<script>
-  // Animate sections on scroll
-  const sections = document.querySelectorAll('section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-
-  sections.forEach(section => observer.observe(section));
-
-  // Image uploader
-  let currentBox = 0;
-  const boxes = document.querySelectorAll('.upload-box');
-  const fileInput = document.getElementById('fileInput');
-
-  function uploadImage(index) {
-    currentBox = index;
-    fileInput.click();
-  }
-
-  fileInput.addEventListener('change', function () {
-    const file = this.files[0];
-    if (file && file.type.startsWith('image/')) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        boxes[currentBox].innerHTML = `<img src="${e.target.result}" alt="Project Image">`;
-      };
-      reader.readAsDataURL(file);
-    }
-  });
-
-  // Highlight nav links on scroll
-  const navLinks = document.querySelectorAll('nav a');
-
-  window.addEventListener('scroll', () => {
-    let fromTop = window.scrollY + 90; // offset for fixed nav
-
-    navLinks.forEach(link => {
-      let section = document.querySelector(link.hash);
-      if (
-        section.offsetTop <= fromTop &&
-        (section.offsetTop + section.offsetHeight) > fromTop
-      ) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-
-    // Show/hide back to top button
-    const backToTop = document.getElementById('backToTop');
-    if (window.scrollY > 300) {
-      backToTop.classList.add('show');
-    } else {
-      backToTop.classList.remove('show');
-    }
-  });
-
-  // Back to top button click
-  document.getElementById('backToTop').addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
-
-</body>
-</html>
-<section id="about" class="info">
-  <h2>What We Do</h2>
-  <p><strong>Brand Strategy:</strong> Helping small businesses find their voice and identity.</p>
-  <p><strong>Web & Graphic Design:</strong> Building professional, beautiful digital experiences.</p>
-  <p><strong>Consulting:</strong> Turning ideas into plans with measurable outcomes.</p>
-  <p><strong>Based in:</strong> Seattle, WA — Available worldwide</p>
-
-  <h3>Why Work With Us?</h3>
-  <p>At OwlMind Creative, collaboration and innovation are at the heart of everything we do. Working with us means being part of a team that values your ideas, nurtures creativity, and drives meaningful impact for our clients. Whether you're a small business owner or a creative professional, we empower you to grow, inspire, and make a difference.</p>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Let’s work together! Email: <a href="mailto:suanp925@gmail.com">suanp925@gmail.com</a></p>
-  <p>Or follow us on Instagram: <a href="https://www.instagram.com/__u.suanjr_.ofc22__/" target="_blank" rel="noopener noreferrer">@__u.suanjr_.ofc22__</a></p>
-</section>
-
-<!-- Add this button somewhere inside <body> (preferably right before </body>) -->
-<button id="workWithUs" aria-label="Work with us">Work With Us</button>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Sunday Worship Schedule</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #4b2e83;
-      margin-bottom: 30px;
-    }
-
-    .schedule {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .entry {
+    .section {
+      padding: 2rem;
       background-color: #fff;
-      border-left: 8px solid #4b2e83;
-      margin-bottom: 20px;
-      padding: 15px 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      border-radius: 10px;
+      color: #000;
     }
-
-    .date {
-      font-size: 1.2em;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .leader {
-      margin: 8px 0;
-      font-weight: 500;
-    }
-
-    .backup {
-      color: #555;
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .backup li {
-      margin: 3px 0;
-    }
-
-    .youth {
-      color: #2c7a7b;
-      font-weight: bold;
-      font-style: italic;
-    }
-
   </style>
 </head>
 <body>
 
-  <h1>Sunday Worship Schedule</h1>
-  <div class="schedule">
+  <header>
+    <div class="menu-icon">&#9776;</div>
+    <div class="search-icon">&#128269;</div>
+  </header>
 
-    <div class="entry">
-      <div class="date">June 3</div>
-      <div class="leader">Worship Leader: Pa Mang Pi</div>
-      <ul class="backup">
-        <li>Lia Esther</li>
-        <li>Lia Nancy</li>
-        <li>Lia Mercy</li>
-        <li>Siamah Ciang</li>
-      </ul>
-    </div>
+  <section class="hero">
+    <h1>My Page</h1>
+    <div class="arrow-down">&#x25BC;</div>
+  </section>
 
-    <div class="entry">
-      <div class="date">August 10</div>
-      <div class="leader">Worship Leader: Angela Huai</div>
-      <ul class="backup">
-        <li>Lia Hannah Bawi</li>
-        <li>Lia Kim Nu</li>
-        <li>Nu Maa Mang</li>
-        <li>Pa Lia Lian</li>
-      </ul>
-    </div>
+  <section class="section">
+    <h2>My History And Work</h2>
+    <p>studies</p>
+  </section>
 
-    <div class="entry">
-      <div class="date">August 17 <span class="youth">— Youth Sunday</span></div>
-      <div class="leader">Worship Leader: Angela Huai</div>
-      <ul class="backup">
-        <li>Nu Maa Mang</li>
-        <li>Lia Nancy</li>
-        <li>Lia Mercy</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="date">August 24</div>
-      <div class="leader">Worship Leader: Nu Maa Mang</div>
-      <ul class="backup">
-        <li>Pa Lia Lian</li>
-        <li>Lia Esther</li>
-        <li>Angela Huai</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="date">August 31</div>
-      <div class="leader">Worship Leader: Pa Lia Lian</div>
-      <ul class="backup">
-        <li>Siamah Ciang</li>
-        <li>Lia Mercy</li>
-        <li>Lia Nancy</li>
-        <li>Lia Esther</li>
-      </ul>
-    </div>
-
-  </div>
 </body>
 </html>
