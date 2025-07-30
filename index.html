@@ -1,338 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>My Site</title>
-<style>
-  /* Reset */
-  * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0; font-family: Arial, sans-serif; background: #fff; color: #222;
-  }
-  a {
-    color: #337ab7; text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-
-  /* Header and Nav */
-  header {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: 50px;
-    background: #000;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    z-index: 1001;
-  }
-  .hamburger {
-    font-size: 28px;
-    cursor: pointer;
-    user-select: none;
-  }
-  .search-icon {
-    margin-left: auto;
-    font-size: 24px;
-    cursor: pointer;
-  }
-
-  /* Side menu */
-  nav.side-menu {
-    position: fixed;
-    top: 0; left: -250px;
-    width: 250px;
-    height: 100vh;
-    background: #222;
-    color: #fff;
-    overflow-y: auto;
-    transition: left 0.3s ease;
-    padding-top: 60px;
-    z-index: 1000;
-  }
-  nav.side-menu.open {
-    left: 0;
-  }
-  nav.side-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  nav.side-menu li {
-    padding: 15px 20px;
-    border-bottom: 1px solid #444;
-  }
-  nav.side-menu li a {
-    color: #fff;
-    font-size: 18px;
-  }
-  nav.side-menu li a:hover {
-    color: #4caf50;
-  }
-
-  /* Overlay behind side menu */
-  #overlay {
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.5);
-    display: none;
-    z-index: 999;
-  }
-  #overlay.active {
-    display: block;
-  }
-
-  /* Sections */
-  section {
-    padding: 70px 15px 40px; /* padding-top accounts for fixed header */
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  h1 {
-    font-size: 2.2em;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  h2 {
-    font-size: 1.5em;
-    color: #337ab7;
-    margin: 20px 0 10px;
-  }
-
-  /* Hero style with background */
-  .hero {
-    background: #2c3e50 url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80') no-repeat center center/cover;
-    height: 220px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 2.5em;
-    font-weight: bold;
-    position: relative;
-  }
-  .hero .down-arrow {
-    position: absolute;
-    bottom: 10px;
-    font-size: 24px;
-    opacity: 0.7;
-  }
-
-  /* Contact Info */
-  .contact-info {
-    text-align: center;
-  }
-  .contact-info p {
-    margin: 6px 0;
-    font-size: 1.1em;
-  }
-  .contact-info a {
-    color: #337ab7;
-    font-weight: bold;
-  }
-
-  /* Content Images */
-  .content-image {
-    max-width: 100%;
-    height: auto;
-    margin: 15px 0;
-    display: block;
-  }
-
-  /* Cards style for "passionate about" */
-  .card {
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    margin: 15px 0;
-    overflow: hidden;
-  }
-  .card img {
-    width: 100%;
-    display: block;
-  }
-  .card-content {
-    padding: 10px 15px;
-    font-weight: 600;
-    color: #337ab7;
-    text-align: center;
-  }
-
-  /* Buttons */
-  .btn {
-    background-color: #337ab7;
-    border: none;
-    color: white;
-    padding: 8px 15px;
-    margin: 10px auto;
-    display: block;
-    border-radius: 4px;
-    text-align: center;
-    cursor: pointer;
-    max-width: 150px;
-  }
-  .btn:hover {
-    background-color: #23527c;
-  }
-
-  /* Google Map iframe */
-  iframe {
-    width: 100%;
-    height: 250px;
-    border: none;
-    margin: 15px 0;
-  }
-
-  /* Responsive typography */
-  @media(min-width: 600px) {
-    section {
-      max-width: 700px;
-    }
-    .hero {
-      height: 300px;
-      font-size: 3em;
-    }
-  }
-</style>
 </head>
-<body>
-
-<header>
-  <div class="hamburger" id="hamburger">&#9776;</div>
-  <div class="search-icon">&#128269;</div>
-</header>
-
-<nav class="side-menu" id="sideMenu">
-  <ul>
-    <li><a href="#home" onclick="closeMenu()">Home</a></li>
-    <li><a href="#myPage" onclick="closeMenu()">My Page</a></li>
-    <li><a href="#myInfo" onclick="closeMenu()">My Info</a></li>
-  </ul>
-</nav>
-<div id="overlay"></div>
-
-<main>
-  <!-- Home Section -->
-  <section id="home">
-    <div class="hero">
-      My Site Work
-      <div class="down-arrow">&#x25BC;</div>
+<body class="HB1eCd-IMrcmb haDZe rz1fc HB1eCd-HzV7m EI1Dfe" jsaction="c7OXCd: .CLIENT;Yr5r9gb:.CLIENT;OoQcoe:.CLIENT;zZDXhc:.CLIENT;u0pjoe:.CLIENT;O0AWlc:.CLIENT;05opqe:.CLIENT;GVneHb:.CLIENT;SK99f:.CLIENT;XxLlob:.CLIENT;kstqse:.CLIENT;Lt9gb:.CLIENT;AiCfcL:.CLIENT;ox3Iue:.CLIENT">
+  
+  <iframe tabindex="-1" aria-hidden="true" style="position: absolute; width: 9em; height: 9em; top: -99em;"></iframe>
+  
+  <div jsmodel="k8usFd" jscontroller="cyBQ" jsaction="rcuQ6b:YAOcgf; transitionend:BtxBye; hIwIkc:UG9tub; Azzyr:e:WoTOmc; uHzqu:KXP26e; V9aAre:VNrA5c;" class="ma5oid JxjLtf">
+    
+    <noscript></noscript>
+    
+    <div id="yDmH0d" class="yDmH0d" jsmodel="QmZ7Be" style="width: 563px; height: 660px;">
+      
+      <div jscontroller="pyPVne" jsmodel="iTeaXe" jsaction="vbaUQc:uAM5ec;" class="vY91Id" jsname="F0RiSe"></div>
+      
+      <div jscontroller="GrdoEf" jsmodel="y5Ctsc" jsaction="Q4y1Cf:E8njs;qGiRsf:mcek9d; XZXomd:hlpTYd;oSMwxf:JblWnb;GRciqf:SqZJdJ;qfQY2e:QEDJ1d; TnFsvf:heg9Fc; hkGUSc:osLiAf;Li3aVe:QSIWff; bmx2me:rdFokd; KroIK:H23The;bDnoub:C8tLXc; sf5osf:Px36sc;Z5MDGd:mcEve; n3GDic:W46dKf; hDTBr:UN4Kfd; KO4Ydc:zUxIxc; GFHfOd:joo9zd;y2fk6e:KZT YDc;PQVwbw:mjrS1c; 1037yd:ZrZv7e; FmTBw:gLEiye; immPRe:HWlsR7e; Azzyr:e:WoTOmc; qW7zrf:gLEiye;" class="gRFJ9d jslazy"></div>
+      
+      <div jscontroller="pyPVne" jsmodel="iTeaXe" jsaction="vbaUQc:uAM5ec;"></div>
+      
+      <div class="MUd2ge gJ9tsd" jscontroller="s5T1B" jsaction="keydown:14811e;rcuQ6b:rcuQ6b;GvneHb:MHYjYb;N StRfb:K1SXw;y0aaL:cP2Aec;K6C1Td:FzpBAd;LUVcw:ZBfIxb;" jsshadow data-left-pinnable="true" data-right-pinnable="true" aria-expanded="false">
+        
+        <div class="PxaFcd GBJck" jsname="psdQ5e" jsaction="click:jm6fB;" style="display:none" aria-hidden="true"></div>
+        
+      </div>
+      
+      <div class="j3ijMc" jsname="UpIUde" jsaction="touchstart:mb1TL;e;xRhIYd:e2d2wd"></div>
+      
+      <div class="y3IDd CatYBe Fx3Kmc fmzCzd" jsname="a5jD2b">
+        
+        <span jsslot>
+          
+          <div jsname="IPnCub" jscontroller="pyPVne" jsmodel="iTeaXe" jsaction="rcuQ6b:WYd;GvneHb:og1FDd;vba UQc:uAM5ec;gW7zr:f:iBD8fc;jnWlkc:UG9tub;Azzyr:e:WoTOmc;" class="Ra3ncR">
+            
+            <div class="n3YOH aJVNX"></div>
+            
+            <div jsname="ciYGJe" class="yiSNwd Y9aq2d" dir="ltr" scroll>
+              
+              <div jsname="pHBCJe" class="kmkYqe oA461d"></div>
+              
+              <div class="bwTZgc" jsname="PyM19e">
+                
+                <div class="PWWCif gxM05b " jsmodel="QRBA7" data-prerendered-grid-section-count="10" data-prerendered-footer-section-count="0">
+                  
+                  <div class="B2mKhd fb0g6 cmS0z gxM05b yMcSQd Ly6Unf" jsshadow jsname="UzWXSb" role="main"></div>
+                  
+                  <span jsslot>
+                    
+                    <div jsmodel="hD2fyb;Qa0g2c" jscontroller="eHSQ1b" jsaction="dblclick:gsRVy;rcuQ6b:WYd; JIbUqc:Jux33c(Bg3gkf);AHmuwe:vd3PCf(Bg3gkf);WjldUd:NXp3w;LUvdef:v21j2b;qW7zrf:rK0h0b;Ve Bis:apdZIe;BHS0tb:CFsOpe;xotGCc:x95Uie;iyMudD:FTfG1;SFLFse:FTfG1;J0Q1qf:opxcmb;TM65Kd:M S7ov;bR99ib:MWekrb;mfFO8b:wA7E4e;PyHUVe:oPBb3c;SUuaEf:gUdUnb;" class="EW20pc fOU46b v56 Uxe">
+                      
+                      <div jscontroller="dIIGPe" jsaction="rcuQ6b:sI1Jxb;JIbUqc:uXFUmc(AhiX1b);BHS0tb:sI1Jxb; bqW7zr:f:sI1Jxb; keydown:hq2uPe;" dir="ltr" style="display:none;"></div>
+                      
+                      <div jscontroller="VJB21" role="banner" jsmodel="qyNYg" jsaction="rcuQ6b:rcuQ6b; clic k:JuxU6(SWHB4b);S2OVxb:L0VzV;Ecc6J:Fjv1y;GzcVHb:qrC3Id;efwIbd:I76fs;bKXSl4:fosTck;gvk Su:kqELub;sZmeze:IkKeCc;Q1ZrZ:12LSZe;qDIvif:ohz6te;iK23Pc:MYD0e;kstqse:UiR4ad;qW7zr f:rK0h0b;JIbUqc:ECBvef(z4TpI);CKGlgd(sY3ecc);AHmuwe:vX91we;O22p3ec:CFbt0b;keydown:qUl 0wb(z4TpI); focus:vX91we;" tabindex="0" jsname="IbftHb" jsrunning="true"></div>
+                      
+                    </div>
+                    
+                  </span>
+                  
+                </div>
+                
+              </div>
+              
+            </div>
+            
+          </div>
+          
+        </span>
+        
+      </div>
+      
     </div>
-    <img class="content-image" src="https://i.ibb.co/8rzFnK1/who-am-i.png" alt="Who am I?" />
-    <h2>About Me?</h2>
-    <p>
-      What I did - or what am I intentional is to be creative and creates the Arts of image towards view and a working site web that can change the look of other by creating and learning different thing.
-    </p>
-    <p>
-      I am passionate about any things that came in my good ideas bad came across any things let make it happen, Together!
-    </p>
-    <h3>This Is Washington <span>📜</span></h3>
-    <img class="content-image" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Washington Scene 1" />
-    <img class="content-image" src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=600&q=80" alt="Washington Scene 2" />
-    <iframe src="https://maps.google.com/maps?q=Seattle&t=&z=12&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
-  </section>
-
-  <!-- My Page Section -->
-  <section id="myPage">
-    <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=600&q=80');">
-      My Page
-      <div class="down-arrow">&#x25BC;</div>
-    </div>
-    <h2>My History And Work</h2>
-    <h3>Studies</h3>
-    <img class="content-image" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=600&q=80" alt="Studies" />
-    <img class="content-image" src="https://images.unsplash.com/photo-1517686469429-6b7b8a9f2a84?auto=format&fit=crop&w=600&q=80" alt="Lightbulb book" />
-    <h3>Main characters</h3>
-    <p>
-      In this good work, I am growing through a lot of experiences. My studies keep me new to have just good work—this helped me see out better where to go. We evolved deep things like life and death.
-    </p>
-    <p>
-      During my page, I realized what was me too. I was that and that, and I wondered my life. And I started to use stories that motivate more important than life.
-    </p>
-    <p>
-      I've lost many friends and loved ones, and that pushes myself with more, but no to some that people come and go. My vast stories always deep focused—doing life see up all time. Life is all sometimes, and life out working—play with a surprise.
-    </p>
-
-    <!-- Passionate about cards -->
-    <div class="card">
-      <img src="https://i.ibb.co/fC6ZqfW/what-you-need.png" alt="What you need" />
-      <div class="card-content">Passionate about LIFE</div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Painting" />
-      <div class="card-content">Passionate about ART</div>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=600&q=80" alt="Passion for love" />
-      <div class="card-content">Passionate about LOVE</div>
-    </div>
-
-    <h3>I'm Created Art</h3>
-    <p>
-      If you're someone who is into something bad and receive or just has or amazing idea you want to bring to life—let's connect & believe in it secretly then just show and talk and join each other.
-    </p>
-    <p>
-      Reach out to me! Let's work together to build and shape the art you truly desire. Whether it's your emotion or a mix of arts, we can create something powerful.
-    </p>
-
-    <!-- Empty placeholders to replicate your boxes -->
-    <div style="height:80px; background:#eee; margin: 20px 0;"></div>
-    <div style="height:80px; background:#eee; margin: 20px 0;"></div>
-    <div style="height:80px; background:#eee; margin: 20px 0;"></div>
-
-    <h3>Frame Costs</h3>
-    <p>$10</p>
-
-    <div style="height:80px; background:#eee; margin: 20px 0;"></div>
-    <h3>Art</h3>
-    <p>$10</p>
-  </section>
-
-  <!-- My Info Section -->
-  <section id="myInfo">
-    <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1534081333815-ae5019106622?auto=format&fit=crop&w=600&q=80');">
-      My Info
-      <div class="down-arrow">&#x25BC;</div>
-    </div>
-
-    <div style="text-align:center; margin-top: 20px;">
-      <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Info icon" width="120" />
-    </div>
-
-    <h2 style="text-align:center; margin-top: 20px; color:#337ab7;">Contact info :</h2>
-    <div class="contact-info">
-      <p>Gmail: <a href="mailto:suanp925@gmail.com">suanp925@gmail.com</a></p>
-      <p>My Web: <a href="http://suanwebsite.info" target="_blank" rel="noopener noreferrer">suanwebsite.info</a></p>
-      <p>Phone: 2067759660</p>
-    </div>
-  </section>
-</main>
-
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const sideMenu = document.getElementById('sideMenu');
-  const overlay = document.getElementById('overlay');
-
-  hamburger.addEventListener('click', () => {
-    sideMenu.classList.toggle('open');
-    overlay.classList.toggle('active');
-  });
-
-  overlay.addEventListener('click', () => {
-    sideMenu.classList.remove('open');
-    overlay.classList.remove('active');
-  });
-
-  function closeMenu() {
-    sideMenu.classList.remove('open');
-    overlay.classList.remove('active');
-  }
-</script>
-
+    
+  </div>
+  
 </body>
 </html>
 <link rel="stylesheet" href="style.css" />
