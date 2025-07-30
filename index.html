@@ -1,102 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Site Work</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My Site</title>
+<style>
+  /* Reset */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; font-family: Arial, sans-serif; background: #fff; color: #222;
+  }
+  a {
+    color: #337ab7; text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Header and Nav */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 50px;
+    background: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 1001;
+  }
+  .hamburger {
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .search-icon {
+    margin-left: auto;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* Side menu */
+  nav.side-menu {
+    position: fixed;
+    top: 0; left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: #222;
+    color: #fff;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    z-index: 1000;
+  }
+  nav.side-menu.open {
+    left: 0;
+  }
+  nav.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  nav.side-menu li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #444;
+  }
+  nav.side-menu li a {
+    color: #fff;
+    font-size: 18px;
+  }
+  nav.side-menu li a:hover {
+    color: #4caf50;
+  }
+
+  /* Overlay behind side menu */
+  #overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 999;
+  }
+  #overlay.active {
+    display: block;
+  }
+
+  /* Sections */
+  section {
+    padding: 70px 15px 40px; /* padding-top accounts for fixed header */
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  h2 {
+    font-size: 1.5em;
+    color: #337ab7;
+    margin: 20px 0 10px;
+  }
+
+  /* Hero style with background */
+  .hero {
+    background: #2c3e50 url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80') no-repeat center center/cover;
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    position: relative;
+  }
+  .hero .down-arrow {
+    position: absolute;
+    bottom: 10px;
+    font-size: 24px;
+    opacity: 0.7;
+  }
+
+  /* Contact Info */
+  .contact-info {
+    text-align: center;
+  }
+  .contact-info p {
+    margin: 6px 0;
+    font-size: 1.1em;
+  }
+  .contact-info a {
+    color: #337ab7;
+    font-weight: bold;
+  }
+
+  /* Content Images */
+  .content-image {
+    max-width: 100%;
+    height: auto;
+    margin: 15px 0;
+    display: block;
+  }
+
+  /* Cards style for "passionate about" */
+  .card {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin: 15px 0;
+    overflow: hidden;
+  }
+  .card img {
+    width: 100%;
+    display: block;
+  }
+  .card-content {
+    padding: 10px 15px;
+    font-weight: 600;
+    color: #337ab7;
+    text-align: center;
+  }
+
+  /* Buttons */
+  .btn {
+    background-color: #337ab7;
+    border: none;
+    color: white;
+    padding: 8px 15px;
+    margin: 10px auto;
+    display: block;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    max-width: 150px;
+  }
+  .btn:hover {
+    background-color: #23527c;
+  }
+
+  /* Google Map iframe */
+  iframe {
+    width: 100%;
+    height: 250px;
+    border: none;
+    margin: 15px 0;
+  }
+
+  /* Responsive typography */
+  @media(min-width: 600px) {
+    section {
+      max-width: 700px;
+    }
+    .hero {
+      height: 300px;
+      font-size: 3em;
+    }
+  }
+</style>
 </head>
 <body>
 
-<div id="mySidemenu" class="sidemenu">
-  <span class="closebtn" onclick="closeMenu()">&times;</span>
-  <a href="index.html">Home</a>
-  <a href="my-page.html">My Page</a>
-  <a href="info.html">Info</a>
-</div>
-
 <header>
-  <div class="icon" onclick="openMenu()">&#9776;</div>
-  <div class="search-box">
-    <form onsubmit="searchSite(); return false;">
-      <input type="text" id="searchInput" placeholder="Search..." />
-      <button type="submit">&#128269;</button>
-    </form>
-  </div>
+  <div class="hamburger" id="hamburger">&#9776;</div>
+  <div class="search-icon">&#128269;</div>
 </header>
 
-<section class="section" style="background: linear-gradient(to bottom right, #1c1c1c, #2e2e2e); color: white;">
-  <h1>My Site Work</h1>
-  <p style="font-size: 2rem;">&#x25BC;</p>
-</section>
+<nav class="side-menu" id="sideMenu">
+  <ul>
+    <li><a href="#home" onclick="closeMenu()">Home</a></li>
+    <li><a href="#myPage" onclick="closeMenu()">My Page</a></li>
+    <li><a href="#myInfo" onclick="closeMenu()">My Info</a></li>
+  </ul>
+</nav>
+<div id="overlay"></div>
 
-<section class="section">
-  <img src="images/whoami.jpg" alt="Who Am I">
-  <h2>About Me?</h2>
-  <p>I am passionate about many things that came in my life—good ideas and bad ones. Let's make it happen, together!</p>
-</section>
+<main>
+  <!-- Home Section -->
+  <section id="home">
+    <div class="hero">
+      My Site Work
+      <div class="down-arrow">&#x25BC;</div>
+    </div>
+    <img class="content-image" src="https://i.ibb.co/8rzFnK1/who-am-i.png" alt="Who am I?" />
+    <h2>About Me?</h2>
+    <p>
+      What I did - or what am I intentional is to be creative and creates the Arts of image towards view and a working site web that can change the look of other by creating and learning different thing.
+    </p>
+    <p>
+      I am passionate about any things that came in my good ideas bad came across any things let make it happen, Together!
+    </p>
+    <h3>This Is Washington <span>📜</span></h3>
+    <img class="content-image" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Washington Scene 1" />
+    <img class="content-image" src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=600&q=80" alt="Washington Scene 2" />
+    <iframe src="https://maps.google.com/maps?q=Seattle&t=&z=12&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+  </section>
 
-<section class="section">
-  <h2>This is Washington 📍</h2>
-  <img src="images/washington.jpg" alt="Washington">
-  <iframe src="https://www.google.com/maps?q=47.6050,-122.3344&z=15&output=embed"></iframe>
-</section>
+  <!-- My Page Section -->
+  <section id="myPage">
+    <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=600&q=80');">
+      My Page
+      <div class="down-arrow">&#x25BC;</div>
+    </div>
+    <h2>My History And Work</h2>
+    <h3>Studies</h3>
+    <img class="content-image" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=600&q=80" alt="Studies" />
+    <img class="content-image" src="https://images.unsplash.com/photo-1517686469429-6b7b8a9f2a84?auto=format&fit=crop&w=600&q=80" alt="Lightbulb book" />
+    <h3>Main characters</h3>
+    <p>
+      In this good work, I am growing through a lot of experiences. My studies keep me new to have just good work—this helped me see out better where to go. We evolved deep things like life and death.
+    </p>
+    <p>
+      During my page, I realized what was me too. I was that and that, and I wondered my life. And I started to use stories that motivate more important than life.
+    </p>
+    <p>
+      I've lost many friends and loved ones, and that pushes myself with more, but no to some that people come and go. My vast stories always deep focused—doing life see up all time. Life is all sometimes, and life out working—play with a surprise.
+    </p>
 
-<section class="section">
-  <img src="images/instagram.jpg" alt="Instagram">
-  <p>My Instagram</p>
-  <p><a href="#">1k. followers</a></p>
-  <a class="button" href="#">Visit</a>
-</section>
+    <!-- Passionate about cards -->
+    <div class="card">
+      <img src="https://i.ibb.co/fC6ZqfW/what-you-need.png" alt="What you need" />
+      <div class="card-content">Passionate about LIFE</div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Painting" />
+      <div class="card-content">Passionate about ART</div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?auto=format&fit=crop&w=600&q=80" alt="Passion for love" />
+      <div class="card-content">Passionate about LOVE</div>
+    </div>
 
-<section class="section">
-  <img src="images/creative.jpg" alt="Creative Website">
-  <p>Website</p>
-  <p><a href="#">OwlMind Creative</a></p>
-  <a class="button" href="#">Visit</a>
-</section>
+    <h3>I'm Created Art</h3>
+    <p>
+      If you're someone who is into something bad and receive or just has or amazing idea you want to bring to life—let's connect & believe in it secretly then just show and talk and join each other.
+    </p>
+    <p>
+      Reach out to me! Let's work together to build and shape the art you truly desire. Whether it's your emotion or a mix of arts, we can create something powerful.
+    </p>
 
-<section class="section">
-  <h2>Best Recommendation To Visit Seattle Places</h2>
-  <img src="images/public-market.jpg" alt="Public Market">
-  <p>Public Market Center</p>
-  <a class="button" href="#">Visit</a>
+    <!-- Empty placeholders to replicate your boxes -->
+    <div style="height:80px; background:#eee; margin: 20px 0;"></div>
+    <div style="height:80px; background:#eee; margin: 20px 0;"></div>
+    <div style="height:80px; background:#eee; margin: 20px 0;"></div>
 
-  <img src="images/space-needle.jpg" alt="Space Needle">
-  <p>Space Needle Seattle</p>
-  <a class="button" href="#">Visit</a>
+    <h3>Frame Costs</h3>
+    <p>$10</p>
 
-  <img src="images/museum.jpg" alt="Museum of Flight">
-  <p>The Museum of Flight</p>
-  <a class="button" href="#">Visit</a>
+    <div style="height:80px; background:#eee; margin: 20px 0;"></div>
+    <h3>Art</h3>
+    <p>$10</p>
+  </section>
 
-  <img src="images/skyview.jpg" alt="Sky View Observatory">
-  <p>Sky View Observatory</p>
-  <a class="button" href="#">Visit</a>
-</section>
+  <!-- My Info Section -->
+  <section id="myInfo">
+    <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1534081333815-ae5019106622?auto=format&fit=crop&w=600&q=80');">
+      My Info
+      <div class="down-arrow">&#x25BC;</div>
+    </div>
+
+    <div style="text-align:center; margin-top: 20px;">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Info icon" width="120" />
+    </div>
+
+    <h2 style="text-align:center; margin-top: 20px; color:#337ab7;">Contact info :</h2>
+    <div class="contact-info">
+      <p>Gmail: <a href="mailto:suanp925@gmail.com">suanp925@gmail.com</a></p>
+      <p>My Web: <a href="http://suanwebsite.info" target="_blank" rel="noopener noreferrer">suanwebsite.info</a></p>
+      <p>Phone: 2067759660</p>
+    </div>
+  </section>
+</main>
 
 <script>
-  function openMenu() {
-    document.getElementById("mySidemenu").style.left = "0";
-  }
+  const hamburger = document.getElementById('hamburger');
+  const sideMenu = document.getElementById('sideMenu');
+  const overlay = document.getElementById('overlay');
+
+  hamburger.addEventListener('click', () => {
+    sideMenu.classList.toggle('open');
+    overlay.classList.toggle('active');
+  });
+
+  overlay.addEventListener('click', () => {
+    sideMenu.classList.remove('open');
+    overlay.classList.remove('active');
+  });
 
   function closeMenu() {
-    document.getElementById("mySidemenu").style.left = "-250px";
-  }
-
-  function searchSite() {
-    const query = document.getElementById("searchInput").value.toLowerCase();
-    if (query.includes("home")) {
-      window.location.href = "index.html";
-    } else if (query.includes("page")) {
-      window.location.href = "my-page.html";
-    } else if (query.includes("info")) {
-      window.location.href = "info.html";
-    } else {
-      alert("Try searching for: Home, Page, Info");
-    }
+    sideMenu.classList.remove('open');
+    overlay.classList.remove('active');
   }
 </script>
 
 </body>
 </html>
+
