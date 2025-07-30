@@ -1,3 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Site Work</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="mySidemenu" class="sidemenu">
+  <span class="closebtn" onclick="closeMenu()">&times;</span>
+  <a href="index.html">Home</a>
+  <a href="my-page.html">My Page</a>
+  <a href="info.html">Info</a>
+</div>
+
+<header>
+  <div class="icon" onclick="openMenu()">&#9776;</div>
+  <div class="search-box">
+    <form onsubmit="searchSite(); return false;">
+      <input type="text" id="searchInput" placeholder="Search..." />
+      <button type="submit">&#128269;</button>
+    </form>
+  </div>
+</header>
+
+<section class="section" style="background: linear-gradient(to bottom right, #1c1c1c, #2e2e2e); color: white;">
+  <h1>My Site Work</h1>
+  <p style="font-size: 2rem;">&#x25BC;</p>
+</section>
+
+<section class="section">
+  <img src="images/whoami.jpg" alt="Who Am I">
+  <h2>About Me?</h2>
+  <p>I am passionate about many things that came in my life—good ideas and bad ones. Let's make it happen, together!</p>
+</section>
+
+<section class="section">
+  <h2>This is Washington 📍</h2>
+  <img src="images/washington.jpg" alt="Washington">
+  <iframe src="https://www.google.com/maps?q=47.6050,-122.3344&z=15&output=embed"></iframe>
+</section>
+
+<section class="section">
+  <img src="images/instagram.jpg" alt="Instagram">
+  <p>My Instagram</p>
+  <p><a href="#">1k. followers</a></p>
+  <a class="button" href="#">Visit</a>
+</section>
+
+<section class="section">
+  <img src="images/creative.jpg" alt="Creative Website">
+  <p>Website</p>
+  <p><a href="#">OwlMind Creative</a></p>
+  <a class="button" href="#">Visit</a>
+</section>
+
+<section class="section">
+  <h2>Best Recommendation To Visit Seattle Places</h2>
+  <img src="images/public-market.jpg" alt="Public Market">
+  <p>Public Market Center</p>
+  <a class="button" href="#">Visit</a>
+
+  <img src="images/space-needle.jpg" alt="Space Needle">
+  <p>Space Needle Seattle</p>
+  <a class="button" href="#">Visit</a>
+
+  <img src="images/museum.jpg" alt="Museum of Flight">
+  <p>The Museum of Flight</p>
+  <a class="button" href="#">Visit</a>
+
+  <img src="images/skyview.jpg" alt="Sky View Observatory">
+  <p>Sky View Observatory</p>
+  <a class="button" href="#">Visit</a>
+</section>
+
 <script>
   function openMenu() {
     document.getElementById("mySidemenu").style.left = "0";
@@ -12,11 +89,14 @@
     if (query.includes("home")) {
       window.location.href = "index.html";
     } else if (query.includes("page")) {
-      window.location.href = "mypage.html";
-    } else if (query.includes("info") || query.includes("contact")) {
+      window.location.href = "my-page.html";
+    } else if (query.includes("info")) {
       window.location.href = "info.html";
     } else {
-      alert("No match found. Try searching Home, My Page, or Info.");
+      alert("Try searching for: Home, Page, Info");
     }
   }
 </script>
+
+</body>
+</html>
