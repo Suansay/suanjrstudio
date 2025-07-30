@@ -10,15 +10,47 @@
       background: #f4f6f9;
       color: #222;
       scroll-behavior: smooth;
+      padding-top: 70px; /* space for fixed nav */
+    }
+
+    /* --- NAVIGATION BAR --- */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #35495e;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 15px 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    }
+
+    nav a {
+      color: #cce3f0;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1em;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #90caf9;
+      border-bottom: 2px solid #90caf9;
+      padding-bottom: 2px;
     }
 
     header {
       background: #35495e;
-      padding: 50px 20px;
+      padding: 50px 20px 30px;
       text-align: center;
       color: #fff;
       position: relative;
       overflow: hidden;
+      margin-bottom: 40px;
     }
 
     /* Floating animation */
@@ -59,7 +91,7 @@
     .container {
       max-width: 1000px;
       margin: auto;
-      padding: 30px 20px;
+      padding: 0 20px 60px;
     }
 
     section {
@@ -67,6 +99,7 @@
       opacity: 0;
       transform: translateY(40px);
       transition: all 0.6s ease;
+      scroll-margin-top: 80px; /* offset for fixed nav */
     }
 
     section.visible {
@@ -99,7 +132,7 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      transition: border 0.3s ease;
+      transition: border 0.3s ease, color 0.3s ease;
       overflow: hidden;
       font-size: 3em;
       color: #aaa;
@@ -129,23 +162,62 @@
       text-decoration: none;
     }
 
+    /* Back to top button */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #35495e;
+      color: #cce3f0;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      z-index: 1000;
+    }
+
+    #backToTop.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     @media (max-width: 600px) {
       header h1 {
         font-size: 2em;
+      }
+
+      nav {
+        gap: 20px;
+      }
+
+      nav a {
+        font-size: 1em;
       }
     }
   </style>
 </head>
 <body>
 
-<header>
+<nav>
+  <a href="#home" class="active">Home</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<header id="home">
   <h1>OwlMind Creative</h1>
   <p>Innovative Branding & Strategy for Modern Thinkers</p>
 </header>
 
 <div class="container">
 
-  <section class="info">
+  <section id="about" class="info">
     <h2>What We Do</h2>
     <p><strong>Brand Strategy:</strong> Helping small businesses find their voice and identity.</p>
     <p><strong>Web & Graphic Design:</strong> Building professional, beautiful digital experiences.</p>
@@ -153,12 +225,10 @@
     <p><strong>Based in:</strong> Seattle, WA — Available worldwide</p>
   </section>
 
-  <section>
+  <section id="projects">
     <h2>Our Approach</h2>
     <p>We combine creative insight with analytical thinking. Whether you're launching a product, scaling a service, or rebranding your look, we help you connect with your audience in meaningful ways.</p>
-  </section>
 
-  <section>
     <h2>Project Samples</h2>
     <p>Upload your portfolio shots or recent project previews. (Local display only)</p>
     <div class="photo-upload">
@@ -171,7 +241,7 @@
     <input type="file" id="fileInput" accept="image/*" style="display: none;">
   </section>
 
-  <section>
+  <section id="contact">
     <h2>Contact</h2>
     <p>Let’s work together! Email: <a href="mailto:suanp925@gmail.com">suanp925@gmail.com</a></p>
     <p>Or follow us on Instagram: <a href="#">@__u.suanjr_.ofc22__</a></p>
@@ -181,6 +251,8 @@
 <footer>
   <p>© 2025 OwlMind Creative — Made with heart & hustle 💡🦉</p>
 </footer>
+
+<button id="backToTop" aria-label="Back to top">↑</button>
 
 <script>
   // Animate sections on scroll
@@ -214,6 +286,38 @@
       };
       reader.readAsDataURL(file);
     }
+  });
+
+  // Highlight nav links on scroll
+  const navLinks = document.querySelectorAll('nav a');
+
+  window.addEventListener('scroll', () => {
+    let fromTop = window.scrollY + 90; // offset for fixed nav
+
+    navLinks.forEach(link => {
+      let section = document.querySelector(link.hash);
+      if (
+        section.offsetTop <= fromTop &&
+        (section.offsetTop + section.offsetHeight) > fromTop
+      ) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+
+    // Show/hide back to top button
+    const backToTop = document.getElementById('backToTop');
+    if (window.scrollY > 300) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+
+  // Back to top button click
+  document.getElementById('backToTop').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
 
