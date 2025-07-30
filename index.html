@@ -1,31 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio – Your Name</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emma & Liam's Wedding</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background: #fffaf8;
+      color: #333;
+    }
+    header {
+      background: #f8e1e7;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .countdown {
+      font-size: 2em;
+      text-align: center;
+      margin: 20px 0;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 200px;
+      height: auto;
+      border-radius: 8px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea {
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background: #e89ba3;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    footer {
+      background: #f8e1e7;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+  </style>
 </head>
 <body>
+
   <header>
-    <h1>Your Name Art</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="survey.html">Survey</a>
-      <a href="contact.html">About/Contact</a>
-    </nav>
+    <h1>Emma & Liam</h1>
+    <p>We're getting married!</p>
   </header>
-  <main>
-    <h2>Portfolio Gallery</h2>
-    <div class="gallery-grid">
-      <!-- Insert your own images -->
-      <img src="art1.jpg" alt="Artwork 1">
-      <img src="art2.jpg" alt="Artwork 2">
-      <img src="art3.jpg" alt="Artwork 3">
-      <!-- etc. -->
+
+  <section>
+    <h2>Wedding Details</h2>
+    <p><strong>Date:</strong> October 10, 2025</p>
+    <p><strong>Time:</strong> 4:00 PM</p>
+    <p><strong>Location:</strong> Sunset Gardens, SeaTac, WA</p>
+  </section>
+
+  <section>
+    <h2>Countdown to Our Big Day</h2>
+    <div class="countdown" id="countdown"></div>
+  </section>
+
+  <section>
+    <h2>Our Story</h2>
+    <p>From our first coffee date to this moment, our journey has been filled with love, laughter, and countless memories. We can't wait to start this new chapter together and are thrilled to have you celebrate with us.</p>
+  </section>
+
+  <section>
+    <h2>Photo Gallery</h2>
+    <div class="gallery">
+      <img src="photo1.jpg" alt="Emma and Liam 1" />
+      <img src="photo2.jpg" alt="Emma and Liam 2" />
+      <img src="photo3.jpg" alt="Emma and Liam 3" />
     </div>
-  </main>
-  <footer>© 2025 Your Name</footer>
+  </section>
+
+  <section>
+    <h2>RSVP</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Message (e.g., number of guests)" rows="4"></textarea>
+      <button type="submit">Submit RSVP</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>With love, Emma & Liam</p>
+  </footer>
+
+  <script>
+    // Countdown Timer
+    const countdown = document.getElementById('countdown');
+    const weddingDate = new Date('October 10, 2025 16:00:00').getTime();
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance < 0) {
+        countdown.innerHTML = "We're Married!";
+        clearInterval(interval);
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    };
+
+    const interval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
 </body>
 </html>
