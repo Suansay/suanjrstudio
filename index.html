@@ -11,6 +11,8 @@
       background: #f9f9f9;
       color: #333;
     }
+
+    /* Header */
     header {
       background: #000;
       color: white;
@@ -18,25 +20,70 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
+      z-index: 2;
     }
+
     .icon {
       font-size: 1.5rem;
+      cursor: pointer;
     }
+
+    /* Side Menu */
+    .sidemenu {
+      height: 100%;
+      width: 250px;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      background-color: #222;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 3;
+    }
+
+    .sidemenu a {
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #fff;
+      display: block;
+      transition: 0.2s;
+    }
+
+    .sidemenu a:hover {
+      background-color: #444;
+    }
+
+    .closebtn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Page Sections */
     .section {
       padding: 2rem 1rem;
       text-align: center;
       background: white;
       margin-bottom: 1rem;
     }
+
     .section h2 {
       color: #2a7dab;
       margin-bottom: 1rem;
     }
+
     img {
       max-width: 90%;
       height: auto;
       margin: 0.5rem 0;
     }
+
     .button {
       display: inline-block;
       padding: 0.5rem 1.5rem;
@@ -48,6 +95,7 @@
       text-decoration: none;
       font-weight: bold;
     }
+
     iframe {
       width: 90%;
       height: 300px;
@@ -55,6 +103,7 @@
       margin: 1rem auto;
       display: block;
     }
+
     a {
       color: #2a7dab;
       text-decoration: none;
@@ -63,8 +112,18 @@
 </head>
 <body>
 
+  <!-- Side Menu -->
+  <div id="mySidemenu" class="sidemenu">
+    <span class="closebtn" onclick="closeMenu()">&times;</span>
+    <a href="#about">About Me</a>
+    <a href="#map">My Location</a>
+    <a href="#instagram">Instagram</a>
+    <a href="#recommendations">Seattle Spots</a>
+  </div>
+
+  <!-- Header -->
   <header>
-    <div class="icon">&#9776;</div>
+    <div class="icon" onclick="openMenu()">&#9776;</div>
     <div class="icon">&#128269;</div>
   </header>
 
@@ -75,7 +134,7 @@
   </section>
 
   <!-- About Me Section -->
-  <section class="section">
+  <section id="about" class="section">
     <img src="whoami.jpg" alt="Who Am I">
     <h2>About Me?</h2>
     <p>
@@ -86,12 +145,12 @@
   </section>
 
   <!-- Map Section -->
-  <section class="section">
+  <section id="map" class="section">
     <iframe src="https://www.google.com/maps?q=47.6050,-122.3344&z=15&output=embed"></iframe>
   </section>
 
   <!-- Instagram Section -->
-  <section class="section">
+  <section id="instagram" class="section">
     <img src="your-instagram-img.jpg" alt="Instagram">
     <p><strong>My Instagram</strong></p>
     <p><a href="#">1k. followers</a></p>
@@ -107,7 +166,7 @@
   </section>
 
   <!-- Seattle Recommendations -->
-  <section class="section">
+  <section id="recommendations" class="section">
     <h2>Best Recommendation To Visit Seattle Places</h2>
 
     <img src="public-market.jpg" alt="Public Market Center">
@@ -127,140 +186,15 @@
     <a class="button" href="#">Visit</a>
   </section>
 
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Page</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    /* Header */
-    .header {
-      background: #111;
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .hamburger {
-      cursor: pointer;
-      font-size: 24px;
-    }
-
-    .title {
-      font-size: 20px;
-    }
-
-    /* Content */
-    .content {
-      padding: 20px;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    .section {
-      margin-bottom: 30px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 10px 15px;
-      background-color: #006d91;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-    .price {
-      color: red;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Header with hamburger -->
-  <div class="header">
-    <div class="hamburger" onclick="goToMenu()">☰</div>
-    <div class="title">My Page</div>
-  </div>
-
-  <!-- Content -->
-  <div class="content">
-    <div class="section">
-      <h2>My History and Work</h2>
-      <p><a href="#">Studies</a></p>
-      <img src="your-image1.jpg" alt="Study Image">
-    </div>
-
-    <div class="section">
-      <img src="your-image2.jpg" alt="Bulb and Book">
-    </div>
-
-    <div class="section">
-      <h3>Main Characters</h3>
-      <p><strong>ME!</strong> - My name is DJ Dough, I’m a passionate artist...</p>
-    </div>
-
-    <div class="section">
-      <img src="your-image3.jpg" alt="What Do You Need?">
-      <p><a href="#" class="button">Passionate About</a></p>
-    </div>
-
-    <div class="section">
-      <img src="your-image4.jpg" alt="Art Image">
-      <p><a href="#" class="button">ART</a></p>
-    </div>
-
-    <div class="section">
-      <img src="your-image5.jpg" alt="Passion for Jesus">
-      <p><a href="#" class="button">JESUS</a></p>
-    </div>
-
-    <div class="section">
-      <p>I'm DJ Dough. Art is one connection to an amazing God!</p>
-    </div>
-
-    <div class="section">
-      <div style="background-color:#eee; height:100px;"></div>
-      <p>Design/Print</p>
-    </div>
-
-    <div class="section">
-      <div style="background-color:#eee; height:100px;"></div>
-      <p>Design/Print</p>
-    </div>
-
-    <div class="section">
-      <div style="background-color:#eee; height:100px;"></div>
-      <p>Home Crafts <span class="price">$10</span></p>
-    </div>
-
-    <div class="section">
-      <div style="background-color:#eee; height:100px;"></div>
-      <p>Art <span class="price">$10</span></p>
-    </div>
-  </div>
-
   <script>
-    function goToMenu() {
-      // Redirect to another page
-      window.location.href = "menu.html"; // Change to your menu page
+    function openMenu() {
+      document.getElementById("mySidemenu").style.left = "0";
+    }
+
+    function closeMenu() {
+      document.getElementById("mySidemenu").style.left = "-250px";
     }
   </script>
 
 </body>
 </html>
-
