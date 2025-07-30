@@ -1,4 +1,4 @@
-/* Base styles */
+/* styles.css */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -23,7 +23,7 @@ header {
   cursor: pointer;
 }
 
-/* Search bar */
+/* Search box */
 .search-box {
   position: relative;
 }
@@ -85,7 +85,7 @@ header {
   cursor: pointer;
 }
 
-/* Sections */
+/* Section styling */
 .section {
   padding: 2rem 1rem;
   text-align: center;
@@ -129,7 +129,6 @@ a {
   text-decoration: none;
 }
 
-/* Placeholder blocks for future content */
 .placeholder {
   background-color: #eee;
   height: 150px;
