@@ -2,151 +2,134 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Emma & Liam's Wedding</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Wedding Day</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Georgia', serif;
+    * {
       margin: 0;
       padding: 0;
-      background: #fffaf8;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #fff0f5;
       color: #333;
+      line-height: 1.6;
     }
+
     header {
-      background: #f8e1e7;
+      background: #ffe6f0;
       text-align: center;
-      padding: 50px 20px;
+      padding: 4rem 2rem;
     }
+
     header h1 {
-      font-size: 3em;
-      margin: 0;
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      color: #b30059;
     }
+
     header p {
-      font-size: 1.2em;
-      margin-top: 10px;
+      font-size: 1.6rem;
+      color: #4d004d;
     }
-    section {
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-    .countdown {
-      font-size: 2em;
+
+    .section {
+      padding: 4rem 2rem;
       text-align: center;
-      margin: 20px 0;
     }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
+
+    .section h2 {
+      font-size: 2.5rem;
+      color: #b30059;
+      margin-bottom: 1rem;
     }
-    .gallery img {
-      width: 200px;
-      height: auto;
-      border-radius: 8px;
+
+    .section p {
+      font-size: 1.4rem;
+      max-width: 600px;
+      margin: 0 auto;
     }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+
+    .rsvp {
+      background: #fff;
+      border: 1px solid #ffcce0;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: 3rem auto;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    input, textarea {
-      padding: 10px;
-      font-size: 1em;
+
+    .rsvp input, .rsvp textarea, .rsvp button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.8rem;
       border: 1px solid #ccc;
       border-radius: 5px;
+      font-size: 1rem;
     }
-    button {
-      background: #e89ba3;
+
+    .rsvp button {
+      background: #b30059;
       color: white;
-      padding: 12px;
       border: none;
-      border-radius: 5px;
-      font-size: 1em;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
+
+    .rsvp button:hover {
+      background: #99004d;
+    }
+
     footer {
-      background: #f8e1e7;
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
+      padding: 2rem;
+      background: #ffe6f0;
+      color: #4d004d;
+      font-size: 1.2rem;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Emma & Liam</h1>
-    <p>We're getting married!</p>
+    <p>Join us in celebrating our special day</p>
   </header>
 
-  <section>
-    <h2>Wedding Details</h2>
-    <p><strong>Date:</strong> October 10, 2025</p>
-    <p><strong>Time:</strong> 4:00 PM</p>
-    <p><strong>Location:</strong> Sunset Gardens, SeaTac, WA</p>
-  </section>
-
-  <section>
-    <h2>Countdown to Our Big Day</h2>
-    <div class="countdown" id="countdown"></div>
-  </section>
-
-  <section>
+  <section class="section">
     <h2>Our Story</h2>
-    <p>From our first coffee date to this moment, our journey has been filled with love, laughter, and countless memories. We can't wait to start this new chapter together and are thrilled to have you celebrate with us.</p>
+    <p>
+      From the moment we met, we knew our hearts were meant for each other. After countless adventures and laughter-filled days, we're finally tying the knot!
+    </p>
   </section>
 
-  <section>
-    <h2>Photo Gallery</h2>
-    <div class="gallery">
-      <img src="photo1.jpg" alt="Emma and Liam 1" />
-      <img src="photo2.jpg" alt="Emma and Liam 2" />
-      <img src="photo3.jpg" alt="Emma and Liam 3" />
+  <section class="section">
+    <h2>Wedding Details</h2>
+    <p>
+      <strong>Date:</strong> October 12, 2025<br>
+      <strong>Location:</strong> The Rose Garden Venue, Seattle, WA<br>
+      <strong>Time:</strong> Ceremony at 3:00 PM, Reception to follow
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>RSVP</h2>
+    <div class="rsvp">
+      <form>
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="4" placeholder="Any message for us?"></textarea>
+        <button type="submit">Send RSVP</button>
+      </form>
     </div>
   </section>
 
-  <section>
-    <h2>RSVP</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Message (e.g., number of guests)" rows="4"></textarea>
-      <button type="submit">Submit RSVP</button>
-    </form>
-  </section>
-
   <footer>
-    <p>With love, Emma & Liam</p>
+    <p>With love, Emma & Liam © 2025</p>
   </footer>
-
-  <script>
-    // Countdown Timer
-    const countdown = document.getElementById('countdown');
-    const weddingDate = new Date('October 10, 2025 16:00:00').getTime();
-
-    const updateCountdown = () => {
-      const now = new Date().getTime();
-      const distance = weddingDate - now;
-
-      if (distance < 0) {
-        countdown.innerHTML = "We're Married!";
-        clearInterval(interval);
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((distance / (1000 * 60)) % 60);
-      const seconds = Math.floor((distance / 1000) % 60);
-
-      countdown.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    };
-
-    const interval = setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
-
 </body>
 </html>
