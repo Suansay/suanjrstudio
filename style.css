@@ -59,13 +59,13 @@ p {
 	transition-property: background-color, color;
 }
 .cta:hover {
-	color: DD98F2;
+	color: 41D3D4;
 	background-color: 660066;
 }
 .brand h1 {
 	font-size: 3rem;
 	text-transform: uppercase;
-	color: 41D3D4;
+	color: #DD98F2;
 }
 .brand h1 span {
 	color: crimson;
