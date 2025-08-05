@@ -77,6 +77,47 @@
     .btn-link:hover {
       background-color: #7e5853;
     }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      display: none;
+      z-index: 1000;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
     footer {
       background: #a1746f;
       color: white;
@@ -96,12 +137,13 @@
 <nav>
   <a href="#services">Services</a>
   <a href="#ideas">Share Your Vision</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#rsvp">RSVP</a>
   <a href="#contact">Contact</a>
 </nav>
 
 <section id="services">
   <h2>What We Offer</h2>
-  <p>We create personalized digital experiences to celebrate your special day. Our services include:</p>
   <ul>
     <li>Custom Wedding Event Pages</li>
     <li>Digital Invitations & Save-the-Dates</li>
@@ -110,28 +152,84 @@
     <li>Theme-Based Website Designs</li>
     <li>Mobile-Friendly Layouts</li>
   </ul>
-  <a class="btn-link" href="https://forms.gle/7QQX6jWodwofWCLv8"_blank">Submit a Service Request</a>
+  <a class="btn-link" href="https://forms.gle/7QQX6jWodwofWCLv8" target="_blank">Submit a Service Request</a>
 </section>
 
 <section id="ideas">
   <h2>Tell Us Your Vision</h2>
-  <p>Please fill out the form below to share your wedding inspiration. Your response will go directly into our planning system.</p>
-  <a class="btn-link" href="https://www.suanwebsite.it.com/gallery" target="_blank">
-    Open Vision Form
-  </a>
+  <a class="btn-link" href="https://www.suanwebsite.it.com/gallery" target="_blank">Open Vision Form</a>
+</section>
+
+<section id="gallery">
+  <h2>Wedding Moments Gallery</h2>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/400x300?text=Wedding+1" alt="Wedding 1" onclick="openLightbox(this.src)">
+    <img src="https://via.placeholder.com/400x300?text=Wedding+2" alt="Wedding 2" onclick="openLightbox(this.src)">
+    <img src="https://via.placeholder.com/400x300?text=Wedding+3" alt="Wedding 3" onclick="openLightbox(this.src)">
+  </div>
+</section>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Large View">
+</div>
+
+<section id="rsvp">
+  <h2>RSVP to Our Event</h2>
+  <form id="rsvp-form">
+    <input type="text" name="guestName" placeholder="Guest Name" required>
+    <select name="attending" required>
+      <option value="">-- Will you attend? --</option>
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+      <option value="Maybe">Maybe</option>
+    </select>
+    <input type="number" name="guests" placeholder="Number of Guests" min="0">
+    <button type="submit" class="btn-link">Submit RSVP</button>
+    <p id="rsvp-response"></p>
+  </form>
 </section>
 
 <section id="contact">
-  <h2>Get in Touch</h2>
-  <p>Have questions or want to start a project with us? Reach out below:</p>
-  <p><strong>Email:</strong> <a href="mailto:suanp925@gmail.com">suanp925@gmail.com</a></p>
-  <p><strong>Phone:</strong> <a href="tel:2057759660">205-775-9660</a></p>
-  <p><strong>Instagram:</strong> <a href="https://www.instagram.com/__u.suanjr_.ofcc22__" target="_blank">@__u.suanjr_.ofcc22__</a></p>
+  <h2>Contact Us</h2>
+  <form id="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit" class="btn-link">Send Message</button>
+    <p id="contact-response"></p>
+  </form>
 </section>
 
 <footer>
   <p>© 2025 Your Wedding Page Business. All rights reserved.</p>
 </footer>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox').style.display = 'flex';
+    document.getElementById('lightbox-img').src = src;
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+
+  const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL'; // Replace with your URL
+
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const data = new FormData(this);
+    fetch(scriptURL, { method: 'POST', body: JSON.stringify(Object.fromEntries(data)) })
+      .then(() => document.getElementById('contact-response').innerText = 'Message sent!');
+    this.reset();
+  });
+
+  document.getElementById('rsvp-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const data = new FormData(this);
+    fetch(scriptURL, { method: 'POST', body: JSON.stringify(Object.fromEntries(data)) })
+      .then(() => document.getElementById('rsvp-response').innerText = 'RSVP submitted!');
+    this.reset();
+  });
+</script>
 
 </body>
 </html>
