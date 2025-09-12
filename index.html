@@ -1,288 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Dream Wedding Starts Here</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Georgia', serif;
-      background-color: #fff8f0;
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background: #a1746f;
-      color: white;
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-    header h1 {
-      font-size: 3rem;
-      letter-spacing: 2px;
-    }
-    header p {
-      font-size: 1.5rem;
-      margin-top: 1rem;
-    }
-    nav {
-      background: #fff;
-      text-align: center;
-      padding: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    nav a {
-      margin: 0 15px;
-      color: #a1746f;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 4rem 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #a1746f;
-      text-align: center;
-    }
-    ul {
-      list-style: square;
-      padding-left: 20px;
-      margin-top: 1rem;
-    }
-    .btn-link {
-      display: inline-block;
-      margin-top: 2rem;
-      background-color: #a1746f;
-      color: white;
-      padding: 12px 25px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background 0.3s;
-      text-align: center;
-    }
-    .btn-link:hover {
-      background-color: #7e5853;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-    .lightbox {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      display: none;
-      z-index: 1000;
-    }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-    }
-    .video-preview {
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-    .before-after {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-    .filter-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-    }
-    .filter-buttons button {
-      background: #a1746f;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .filter-buttons button:hover {
-      background: #7e5853;
-    }
-    .filter-item {
-      display: none;
-    }
-    input, textarea, select {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      margin-bottom: 1rem;
-    }
-    footer {
-      background: #a1746f;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tea Nora</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f7f3f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .bio {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .social-icons a {
+            text-decoration: none;
+            color: #666;
+            font-size: 1.5rem;
+        }
+        .link-button {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #333;
+            transition: transform 0.2s;
+        }
+        .link-button:hover {
+            transform: translateY(-2px);
+        }
+        .link-button img {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+        }
+    </style>
 </head>
 <body>
-
-<header>
-  <h1>Your Dream Wedding Starts Here</h1>
-  <p>Design. Plan. Create. Let's bring your vision to life.</p>
-</header>
-
-<nav>
-  <a href="#services">Services</a>
-  <a href="#ideas">Share Your Vision</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#rsvp">RSVP</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<section id="services">
-  <h2>What We Offer</h2>
-  <ul>
-    <li>Custom Wedding Event Pages</li>
-    <li>Digital Invitations & Save-the-Dates</li>
-    <li>Photo & Video Galleries</li>
-    <li>RSVP Forms and Guestbooks</li>
-    <li>Theme-Based Website Designs</li>
-    <li>Mobile-Friendly Layouts</li>
-  </ul>
-  <a class="btn-link" href="https://forms.gle/7QQX6jWodwofWCLv8" target="_blank">Submit a Service Request</a>
-</section>
-
-<section id="ideas">
-  <h2>Tell Us Your Vision</h2>
-  <a class="btn-link" href="https://www.suanwebsite.it.com/gallery" target="_blank">Open Vision Form</a>
-</section>
-
-<section id="gallery">
-  <h2>Wedding Moments Gallery</h2>
-  <div class="filter-buttons">
-    <button onclick="filterGallery('all')">All</button>
-    <button onclick="filterGallery('outdoor')">Outdoor</button>
-    <button onclick="filterGallery('classic')">Classic</button>
-    <button onclick="filterGallery('modern')">Modern</button>
-  </div>
-  <div class="gallery">
-    <img src="https://via.placeholder.com/400x300?text=Outdoor+1" alt="Outdoor Wedding" class="filter-item outdoor" onclick="openLightbox(this.src)">
-    <img src="https://via.placeholder.com/400x300?text=Classic+1" alt="Classic Wedding" class="filter-item classic" onclick="openLightbox(this.src)">
-    <img src="https://via.placeholder.com/400x300?text=Modern+1" alt="Modern Wedding" class="filter-item modern" onclick="openLightbox(this.src)">
-  </div>
-  <div class="video-preview">
-    <iframe width="100%" height="315" src="https://www.youtube.com/watch?v=05I5Sya8nhU" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <div class="before-after">
-    <h3 style="text-align:center; color:#a1746f;">Before & After Transformation</h3>
-    <img src="https://via.placeholder.com/400x300?text=Before" alt="Before">
-    <img src="https://via.placeholder.com/400x300?text=After" alt="After">
-  </div>
-</section>
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img" src="" alt="Large View">
-</div>
-
-<section id="rsvp">
-  <h2>RSVP to Our Event</h2>
-  <form id="rsvp-form">
-    <input type="text" name="guestName" placeholder="Guest Name" required>
-    <select name="attending" required>
-      <option value="">-- Will you attend? --</option>
-      <option value="Yes">Yes</option>
-      <option value="No">No</option>
-      <option value="Maybe">Maybe</option>
-    </select>
-    <input type="number" name="guests" placeholder="Number of Guests" min="0">
-    <button type="submit" class="btn-link">Submit RSVP</button>
-    <p id="rsvp-response"></p>
-  </form>
-</section>
-
-<section id="contact">
-  <h2>Contact Us</h2>
-  <form id="contact-form">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit" class="btn-link">Send Message</button>
-    <p id="contact-response"></p>
-  </form>
-</section>
-
-<footer>
-  <p>© 2025 Your Wedding Page Business. All rights reserved.</p>
-</footer>
-
-<script>
-  function openLightbox(src) {
-    document.getElementById('lightbox').style.display = 'flex';
-    document.getElementById('lightbox-img').src = src;
-  }
-  function closeLightbox() {
-    document.getElementById('lightbox').style.display = 'none';
-  }
-  function filterGallery(category) {
-    const items = document.querySelectorAll('.filter-item');
-    items.forEach(item => {
-      item.style.display = (category === 'all' || item.classList.contains(category)) ? 'block' : 'none';
-    });
-  }
-
-  const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const data = new FormData(this);
-    fetch(scriptURL, { method: 'POST', body: JSON.stringify(Object.fromEntries(data)) })
-      .then(() => document.getElementById('contact-response').innerText = 'Message sent!');
-    this.reset();
-  });
-  document.getElementById('rsvp-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const data = new FormData(this);
-    fetch(scriptURL, { method: 'POST', body: JSON.stringify(Object.fromEntries(data)) })
-      .then(() => document.getElementById('rsvp-response').innerText = 'RSVP submitted!');
-    this.reset();
-  });
-  // Initialize default filter
-  filterGallery('all');
-</script>
-
-</body>
-</html>
+    <div class="container">
+        <div class="profile-section">
+            <img class="profile-pic" src="https://via.placeholder.com/100" alt="Profile Picture">
+            <h1 class="name">Tea Nora</h1>
+            <p class="bio">❤️ 🇺🇸 Your daily dose of energy 🇻🇳 💪✨</p>
+            <div class="social-icons">
+                <a href="#"><img src="https://www.svgrepo.com/show/303114/instagram-2016-logo.svg" alt="Instagram" width="24" height="24"></a>
+                <a href="#"><img src="https://www.svgrepo.com/show/448106/tiktok-logo.svg" alt="TikTok" width="24" height="24"></a>
+                <a href="#"><img src="https://www.svgrepo.com/show/448212/facebook.svg" alt="Facebook" width="24" height="24"></a>
+                <a href="#"><img src="https://www.svgrepo.com/show/512317/pinterest-142.svg" alt="Pinterest" width="24" height="24"></a>
+            </div>
+        </div>
+        <a href="#" class="link-button">
+            <img src="https://www.svgrepo.com/show/448265/paypal-logo-circle.svg" alt="PayPal">
+            <span>PayPal</span>
+        </a>
 
