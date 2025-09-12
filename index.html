@@ -1,84 +1,96 @@
-import React from "react";
-import {
-  FaInstagram,
-  FaTiktok,
-  FaFacebook,
-  FaPaypal,
-} from "react-icons/fa";
-import { PiThreadsLogoFill } from "react-icons/pi";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tea Nora</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fde2f3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
 
-export default function ProfilePage() {
-  return (
-    <div className="min-h-screen bg-pink-100 flex flex-col items-center p-6">
-      {/* Profile Section */}
-      <div className="flex flex-col items-center text-center">
-        <img
-          src="https://via.placeholder.com/150" // replace with profile photo
-          alt="profile"
-          className="w-28 h-28 rounded-full object-cover border-4 border-white shadow-md"
-        />
-        <h1 className="mt-4 text-2xl font-bold text-pink-700">Tea Nora</h1>
-        <p className="text-gray-700 text-sm">
-          📍🇺🇸 Your daily dose of energy 🇻🇳 💪✨
-        </p>
-      </div>
+    .profile {
+      text-align: center;
+      margin-top: 20px;
+    }
 
-      {/* Social Icons */}
-      <div className="flex gap-6 mt-4 text-pink-600 text-2xl">
-        <FaInstagram />
-        <FaTiktok />
-        <FaFacebook />
-        <FaPaypal />
-      </div>
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
 
-      {/* Links */}
-      <div className="mt-6 w-full max-w-md flex flex-col gap-3">
-        {/* PayPal */}
-        <a
-          href="#"
-          className="bg-white shadow rounded-xl p-3 flex justify-center items-center font-medium"
-        >
-          PayPal
-        </a>
+    .profile h1 {
+      margin: 15px 0 5px;
+      font-size: 24px;
+      color: #d63384;
+    }
 
-        {/* Instagram */}
-        <a
-          href="#"
-          className="bg-white shadow rounded-xl p-3 flex items-center gap-3"
-        >
-          <FaInstagram className="text-pink-500 text-xl" />
-          <span className="font-medium">tea.nora</span>
-        </a>
+    .profile p {
+      font-size: 14px;
+      color: #444;
+    }
 
-        {/* TikTok */}
-        <a
-          href="#"
-          className="bg-white shadow rounded-xl p-3 flex items-center gap-3"
-        >
-          <FaTiktok className="text-black text-xl" />
-          <span className="font-medium">tea.nora</span>
-        </a>
+    .icons {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 22px;
+    }
 
-        {/* Facebook */}
-        <a
-          href="#"
-          className="bg-white shadow rounded-xl p-3 flex items-center gap-3"
-        >
-          <FaFacebook className="text-blue-600 text-xl" />
-          <span className="font-medium">Tri Tiên</span>
-        </a>
+    .icons a {
+      color: #d63384;
+      text-decoration: none;
+    }
 
-        {/* Threads */}
-        <a
-          href="#"
-          className="bg-white shadow rounded-xl p-3 flex items-center gap-3"
-        >
-          <PiThreadsLogoFill className="text-black text-xl" />
-          <span className="font-medium">tea.nora</span>
-        </a>
-      </div>
-    </div>
-  );
-}
+    .links {
+      margin-top: 25px;
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
 
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 12px 16px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      font-weight: 500;
+      color: #333;
+      text-decoration: none;
+      transition: transform 0.15s ease;
+    }
 
+    .link:hover {
+      transform: scale(1.02);
+    }
+
+    .icon {
+      font-size: 20px;
+      min-width: 24px;
+      text-align: center;
+    }
+  </style>
+
+  <!-- Font Awesome for social icons -->
+  <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="profile">
+    <im
