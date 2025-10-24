@@ -1,17 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+# 🌐 Simple Login Page
 
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="css/styles.css" type="text/css" media="all">
-  <!--<a href="https://icons8.com">Icon pack by Icons8</a>-->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald:300|Sacramento" rel="stylesheet">
-  <title> Studio </title>
-</head>
+A clean and responsive login page built with **HTML**, **CSS**, and **JavaScript**.  
+This project demonstrates basic front-end form handling and styling for a simple authentication interface.
 
-<body>
+---
 
-is.suanjr.studio.com
+## 🚀 Features
+
+- Responsive design (works on mobile and desktop)
+- Password visibility toggle
+- Basic form validation (username & password required)
+- Demo login (username: `admin`, password: `1234`)
+- Smooth and minimal design
+
+---
+
+## 🧩 File Structure
+
+
 
 ---
 
@@ -56,5 +62,6 @@ is.suanjr.studio.com
 ---
 
 ⭐ *If you found this helpful, consider giving it a star on GitHub!*
+
 
 
